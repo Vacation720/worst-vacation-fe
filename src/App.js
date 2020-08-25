@@ -7,6 +7,8 @@ import {
 } from 'react-router-dom';
 import SignIn from './Auth/SignIn.js';
 import Signup from './Auth/Signup.js';
+import Home from './Home/Home.js';
+import Header from './Header';
 
 class App extends React.Component {
   state = {
@@ -29,9 +31,15 @@ class App extends React.Component {
     return (
       <body>
             <Router>
+                <Header token={this.state.token} logout={this.clearToken} />
                 <Switch>
                     <Route 
                         path="/" 
+                        exact
+                        render={(routerProps) => <Home handleToken={this.handleToken} token={this.state.token} {...routerProps} />} 
+                    />
+                    <Route 
+                        path="/login" 
                         exact
                         render={(routerProps) => <SignIn handleToken={this.handleToken} token={this.state.token} {...routerProps} />} 
                     />
