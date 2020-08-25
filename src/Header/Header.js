@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './header.css';
 
 
 class Header extends React.Component {
@@ -8,7 +9,7 @@ class Header extends React.Component {
             <header>
                 <div>
                     <Link className='logo-div' to="/">
-                        <h1>Detestination</h1>
+                        <h1>Detest<span className='header-span'>ination</span></h1>
                     </Link>
                 </div>
                 <nav>

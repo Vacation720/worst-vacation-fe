@@ -8,7 +8,7 @@ import {
 import SignIn from './Auth/SignIn.js';
 import Signup from './Auth/Signup.js';
 import Home from './Home/Home.js';
-import Header from './Header';
+import Header from './Header/Header';
 import Footer from './Footer';
 
 class App extends React.Component {
@@ -30,29 +30,29 @@ class App extends React.Component {
 
   render() { 
     return (
-      <body>
-            <Router>
-                <Header token={this.state.token} logout={this.clearToken} />
-                <Switch>
-                    <Route 
-                        path="/" 
-                        exact
-                        render={(routerProps) => <Home handleToken={this.handleToken} token={this.state.token} {...routerProps} />} 
-                    />
-                    <Route 
-                        path="/login" 
-                        exact
-                        render={(routerProps) => <SignIn handleToken={this.handleToken} token={this.state.token} {...routerProps} />} 
-                    />
-                    <Route 
-                        path="/signup" 
-                        exact
-                        render={(routerProps) => <Signup handleToken={this.handleToken} token={this.state.token} {...routerProps} />} 
-                    />
-                </Switch>
-                <Footer />
-            </Router>
-        </body>
+      <div className='app'>
+        <Router>
+              <Header token={this.state.token} logout={this.clearToken} />
+              <Switch>
+                  <Route 
+                      path="/" 
+                      exact
+                      render={(routerProps) => <Home handleToken={this.handleToken} token={this.state.token} {...routerProps} />} 
+                  />
+                  <Route 
+                      path="/login" 
+                      exact
+                      render={(routerProps) => <SignIn handleToken={this.handleToken} token={this.state.token} {...routerProps} />} 
+                  />
+                  <Route 
+                      path="/signup" 
+                      exact
+                      render={(routerProps) => <Signup handleToken={this.handleToken} token={this.state.token} {...routerProps} />} 
+                  />
+              </Switch>
+              <Footer />
+          </Router>
+      </div>
     )
   }
 }
