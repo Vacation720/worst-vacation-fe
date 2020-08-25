@@ -9,6 +9,7 @@ import SignIn from './Auth/SignIn.js';
 import Signup from './Auth/Signup.js';
 import Home from './Home/Home.js';
 import Header from './Header';
+import Footer from './Footer';
 
 class App extends React.Component {
   state = {
@@ -49,6 +50,7 @@ class App extends React.Component {
                         render={(routerProps) => <Signup handleToken={this.handleToken} token={this.state.token} {...routerProps} />} 
                     />
                 </Switch>
+                <Footer />
             </Router>
         </body>
     )
