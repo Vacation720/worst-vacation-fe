@@ -6,8 +6,6 @@ class Hotels extends React.Component {
         keyword: 'hotel',
         hotels: [],
         city: '',
-        category: '',
-        business_type: '',
         business_name: '',
         review: '',
         rating: 0,

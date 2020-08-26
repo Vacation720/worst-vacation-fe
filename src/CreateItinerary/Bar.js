@@ -6,8 +6,6 @@ class Bar extends React.Component {
         keyword: 'worst bar',
         bars: [],
         city: '',
-        category: '',
-        business_type: '',
         business_name: '',
         review: '',
         rating: 0,

@@ -6,8 +6,6 @@ class Tattoo extends React.Component {
         keyword: 'tattoo',
         tattoos: [],
         city: '',
-        category: '',
-        business_type: '',
         business_name: '',
         review: '',
         rating: 0,

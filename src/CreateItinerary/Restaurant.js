@@ -6,8 +6,6 @@ class Restaurant extends React.Component {
         keyword: 'worst restaurant',
         restaurants: [],
         city: '',
-        category: '',
-        business_type: '',
         business_name: '',
         review: '',
         rating: 0,

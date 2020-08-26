@@ -6,8 +6,6 @@ class Attraction extends React.Component {
         keyword: 'attraction',
         attractions: [],
         city: '',
-        category: '',
-        business_type: '',
         business_name: '',
         review: '',
         rating: 0,
