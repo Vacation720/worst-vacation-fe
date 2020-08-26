@@ -20,18 +20,6 @@ class Hotels extends React.Component {
         console.log(this.state.hotels);
     }
 
-    // handleClick = async () => {
-    //     this.setState({
-    //         city: hotel.city,
-    //         business_name: '',
-    //         review: '',
-    //         rating: 0,
-    //         image_url: '',
-    //         trip_id: 0,
-    //         address: ''
-    //     })
-    // }
-
     handleHotelPost = async (hotel) => {
 
         await this.setState({

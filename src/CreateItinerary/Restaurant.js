@@ -1,5 +1,5 @@
 import React from 'react';
-import { getBusinesses } from '../vacation-api.js'
+import { getBusinesses, postChoice } from '../vacation-api.js'
 
 class Restaurant extends React.Component {
     state = {
@@ -42,7 +42,7 @@ class Restaurant extends React.Component {
             address: this.state.address
         })
         
-        await this.props.didRestaurantsPost();
+        await this.props.didRestaurantPost();
     }
 
     //when image url is empty, add stock image
