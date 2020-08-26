@@ -20,19 +20,53 @@ class Attraction extends React.Component {
         console.log(this.state.attractions);
     }
 
+    // handleClick = async () => {
+    //     this.setState({
+    //         city: hotel.city,
+    //         business_name: '',
+    //         review: '',
+    //         rating: 0,
+    //         image_url: '',
+    //         trip_id: 0,
+    //         address: ''
+    //     })
+    // }
+    
+    handleAttractionPost = async (attraction) => {
+
+        await this.setState({
+            city: attraction.city,
+            business_name: attraction.business_name,
+            review: attraction.review,
+            rating: attraction.rating,
+            image_url: attraction.image_url,
+            trip_id: this.props.trip_id,
+            address: attraction.address
+        })
+
+        await postChoice({
+            city: this.state.city,
+            business_name: this.state.business_name,
+            review: this.state.review,
+            rating: this.state.rating,
+            image_url: this.state.image_url,
+            trip_id: this.state.trip_id,
+            address: this.state.address
+        })
+        
+        await this.props.didAttractionsPost();
+    }
+        
+
     //when image url is empty, add stock image
     render() { 
         return (
             <div>
-           {this.state.attractions.map(attraction => {
-            return <div> 
-            <img alt="whatever" src={ attraction.image_url } />
-            <p>{ attraction.business_name } </p>
-            <p> { attraction.rating }</p>
-           <p> { attraction.review }</p>
-            </div>
-           }
-            )}
+                {
+                    this.state.attractions.map((attraction) => {
+                        return <label onClick={() => this.handleAttractionPost(attraction)}> <h2>{attraction.business_name}</h2> </label>
+                        })
+                    }
             </div>
         );
     }
