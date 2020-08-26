@@ -20,19 +20,40 @@ class Restaurant extends React.Component {
         console.log(this.state.restaurants);
     }
 
+    handleRestaurantPost = async (restaurant) => {
+
+        await this.setState({
+            city: restaurant.city,
+            business_name: restaurant.business_name,
+            review: restaurant.review,
+            rating: restaurant.rating,
+            image_url: restaurant.image_url,
+            trip_id: this.props.trip_id,
+            address: restaurant.address
+        })
+
+        await postChoice({
+            city: this.state.city,
+            business_name: this.state.business_name,
+            review: this.state.review,
+            rating: this.state.rating,
+            image_url: this.state.image_url,
+            trip_id: this.state.trip_id,
+            address: this.state.address
+        })
+        
+        await this.props.didRestaurantsPost();
+    }
+
     //when image url is empty, add stock image
     render() { 
         return (
             <div>
-           {this.state.restaurants.map(restaurant => {
-            return <div> 
-            <img alt="whatever" src={ restaurant.image_url } />
-            <p>{ restaurant.business_name } </p>
-            <p> { restaurant.rating }</p>
-           <p> { restaurant.review }</p>
-            </div>
-           }
-            )}
+                {
+                    this.state.restaurants.map((restaurant) => {
+                        return <label onClick={() => this.handleRestaurantPost(restaurant)}> <h2>{restaurant.business_name}</h2> </label>
+                        })
+                    }
             </div>
         );
     }
