@@ -1,5 +1,5 @@
 import React from 'react';
-import { getBusinesses } from '../vacation-api.js'
+import { getBusinesses, postChoice } from '../vacation-api.js'
 
 class Tattoo extends React.Component {
     state = {
@@ -20,19 +20,40 @@ class Tattoo extends React.Component {
         console.log(this.state.tattoos);
     }
 
+    handleTattooPost = async (tattoo) => {
+
+        await this.setState({
+            city: tattoo.city,
+            business_name: tattoo.business_name,
+            review: tattoo.review,
+            rating: tattoo.rating,
+            image_url: tattoo.image_url,
+            trip_id: this.props.trip_id,
+            address: tattoo.address
+        })
+
+        await postChoice({
+            city: this.state.city,
+            business_name: this.state.business_name,
+            review: this.state.review,
+            rating: this.state.rating,
+            image_url: this.state.image_url,
+            trip_id: this.state.trip_id,
+            address: this.state.address
+        })
+        
+        await this.props.didTattooPost();
+    }
+    
     //when image url is empty, add stock image
     render() { 
         return (
             <div>
-           {this.state.tattoos.map(tattoo => {
-            return <div> 
-            <img alt="whatever" src={ tattoo.image_url } />
-            <p>{ tattoo.business_name } </p>
-            <p> { tattoo.rating }</p>
-           <p> { tattoo.review }</p>
-            </div>
-           }
-            )}
+                {
+                    this.state.tattoos.map((tattoo) => {
+                        return <label onClick={() => this.handleTattooPost(tattoo)}> <h2>{tattoo.business_name}</h2> </label>
+                        })
+                    }
             </div>
         );
     }
