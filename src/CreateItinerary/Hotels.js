@@ -20,26 +20,52 @@ class Hotels extends React.Component {
         console.log(this.state.hotels);
     }
 
-    handleSubmit = async (e) => {
-        e.preventDefault();
-        await postChoice({
+    // handleClick = async () => {
+    //     this.setState({
+    //         city: hotel.city,
+    //         business_name: '',
+    //         review: '',
+    //         rating: 0,
+    //         image_url: '',
+    //         trip_id: 0,
+    //         address: ''
+    //     })
+    // }
 
+    handleHotelPost = async (hotel) => {
+
+        await this.setState({
+            city: hotel.city,
+            business_name: hotel.business_name,
+            review: hotel.review,
+            rating: hotel.rating,
+            image_url: hotel.image_url,
+            trip_id: this.props.trip_id,
+            address: hotel.address
         })
-    }
 
+        await postChoice({
+            city: this.state.city,
+            business_name: this.state.business_name,
+            review: this.state.review,
+            rating: this.state.rating,
+            image_url: this.state.image_url,
+            trip_id: this.state.trip_id,
+            address: this.state.address
+        })
+        
+        await this.props.didHotelsPost();
+    }
+    
     //when image url is empty, add stock image
     render() { 
         return (
             <div>
-           {this.state.hotels.map(hotel => {
-            return <div> 
-            <img alt="whatever" src={ hotel.image_url } />
-            <p>{ hotel.business_name } </p>
-            <p> { hotel.rating }</p>
-           <p> { hotel.review }</p>
-            </div>
-           }
-            )}
+                {
+                    this.state.hotels.map((hotel) => {
+                        return <label onClick={() => this.handleHotelPost(hotel)}> <h2>{hotel.business_name}</h2> </label>
+                        })
+                    }
             </div>
         );
     }

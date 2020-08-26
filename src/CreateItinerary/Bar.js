@@ -1,9 +1,9 @@
 import React from 'react';
-import { getBusinesses } from '../vacation-api.js'
+import { getBusinesses, postChoice } from '../vacation-api.js'
 
-class Bar extends React.Component {
+class Bars extends React.Component {
     state = {
-        keyword: 'worst bar',
+        keyword: 'bar',
         bars: [],
         city: '',
         business_name: '',
@@ -20,19 +20,40 @@ class Bar extends React.Component {
         console.log(this.state.bars);
     }
 
+    handleBarsPost = async (bar) => {
+
+        await this.setState({
+            city: bar.city,
+            business_name: bar.business_name,
+            review: bar.review,
+            rating: bar.rating,
+            image_url: bar.image_url,
+            trip_id: this.props.trip_id,
+            address: bar.address
+        })
+
+        await postChoice({
+            city: this.state.city,
+            business_name: this.state.business_name,
+            review: this.state.review,
+            rating: this.state.rating,
+            image_url: this.state.image_url,
+            trip_id: this.state.trip_id,
+            address: this.state.address
+        })
+        
+        await this.props.didBarsPost();
+    }
+    
     //when image url is empty, add stock image
     render() { 
         return (
             <div>
-           {this.state.bars.map(bar => {
-            return <div> 
-            <img alt="whatever" src={ bar.image_url } />
-            <p>{ bar.business_name } </p>
-            <p> { bar.rating }</p>
-           <p> { bar.review }</p>
-            </div>
-           }
-            )}
+                {
+                    this.state.bars.map((bar) => {
+                        return <label onClick={() => this.handleBarsPost(bar)}> <h2>{bar.business_name}</h2> </label>
+                        })
+                    }
             </div>
         );
     }
@@ -40,4 +61,4 @@ class Bar extends React.Component {
 
 
  
-export default Bar;
+export default Bars;
