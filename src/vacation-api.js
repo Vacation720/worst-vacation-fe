@@ -33,3 +33,16 @@ export function getBusinesses(lat, lon, keyword) {
         return { error: e.message }
     }
 }
+
+export function postChoice(chosenItem) {
+    const token = localStorage.getItem('token');
+
+    try {
+        return request
+            .post(`${URL}/api/detail-page`, chosenItem)
+            .set('Authorization', token);
+    }
+    catch (e) {
+        return { error: e.message };
+    }
+}

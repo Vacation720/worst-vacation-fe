@@ -3,8 +3,17 @@ import { getBusinesses } from '../vacation-api.js'
 
 class Bar extends React.Component {
     state = {
-        keyword: 'worst%bar',
-        bars: []
+        keyword: 'worst bar',
+        bars: [],
+        city: '',
+        category: '',
+        business_type: '',
+        business_name: '',
+        review: '',
+        rating: 0,
+        image_url: '',
+        trip_id: 0,
+        address: ''
     }
 
     componentDidMount = async () => {
