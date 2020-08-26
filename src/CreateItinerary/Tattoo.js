@@ -4,7 +4,14 @@ import { getBusinesses } from '../vacation-api.js'
 class Tattoo extends React.Component {
     state = {
         keyword: 'tattoo',
-        tattoos: []
+        tattoos: [],
+        city: '',
+        business_name: '',
+        review: '',
+        rating: 0,
+        image_url: '',
+        trip_id: 0,
+        address: ''
     }
 
     componentDidMount = async () => {

@@ -4,7 +4,14 @@ import { getBusinesses } from '../vacation-api.js'
 class Attraction extends React.Component {
     state = {
         keyword: 'attraction',
-        attractions: []
+        attractions: [],
+        city: '',
+        business_name: '',
+        review: '',
+        rating: 0,
+        image_url: '',
+        trip_id: 0,
+        address: ''
     }
 
     componentDidMount = async () => {
