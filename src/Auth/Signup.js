@@ -23,7 +23,7 @@ class Signup extends React.Component {
     render() { 
         return (
             <div className='login-container'>
-                <h2 className='login-h2'>Signup</h2>
+                <h2 className='login-h2'>SIGN UP:</h2>
                 <form className='login-form' onSubmit={this.handleSignUp}>
                     <label className='login-label'>
                     <h3>Email</h3>
@@ -34,10 +34,10 @@ class Signup extends React.Component {
                         <input className='login-input' type="password" autoComplete="current-password" onChange={e => this.setState({ signUpPassword: e.target.value })} value={ this.state.signUpPassword}/>
                     </label>
                     <div className='login-div'>
-                        <button className='login-button'>Signup</button>
+                        <button className='login-button'>SIGN UP</button>
                     </div>
                 </form>
-                <Link to='/'>
+                <Link to='/login'>
                     <p>Existing Account?</p>
                 </Link>
             </div>
