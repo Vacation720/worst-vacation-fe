@@ -10,6 +10,7 @@ import Signup from './Auth/Signup.js';
 import Home from './Home/Home.js';
 import Header from './Header/Header';
 import Footer from './Footer';
+import Selection from './Selection/Selection';
 
 class App extends React.Component {
   state = {
@@ -48,6 +49,11 @@ class App extends React.Component {
                       path="/signup" 
                       exact
                       render={(routerProps) => <Signup handleToken={this.handleToken} token={this.state.token} {...routerProps} />} 
+                  />
+                  <Route 
+                      path="/create-itinerary" 
+                      exact
+                      render={(routerProps) => <Selection handleToken={this.handleToken} token={this.state.token} {...routerProps} />} 
                   />
               </Switch>
               <Footer />
