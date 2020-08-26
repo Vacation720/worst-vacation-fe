@@ -10,7 +10,7 @@ import Signup from './Auth/Signup.js';
 import Home from './Home/Home.js';
 import Header from './Header/Header';
 import Footer from './Footer';
-import Selection from './Selection/Selection';
+import CreateItinerary from './CreateItinerary/CreateItinerary.js';
 
 class App extends React.Component {
   state = {
@@ -53,7 +53,7 @@ class App extends React.Component {
                   <Route 
                       path="/create-itinerary" 
                       exact
-                      render={(routerProps) => <Selection handleToken={this.handleToken} token={this.state.token} {...routerProps} />} 
+                      render={(routerProps) => <CreateItinerary handleToken={this.handleToken} token={this.state.token} {...routerProps} />} 
                   />
               </Switch>
               <Footer />

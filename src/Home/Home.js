@@ -7,7 +7,7 @@ class Home extends React.Component {
         search: '',
         lat: '',
         lon: '',
-        toSelection: false
+        toItinerary: false
     }
 
     handleSearch = async (e) => {
@@ -18,7 +18,7 @@ class Home extends React.Component {
             this.setState({
                 lat: locationData.body[0].lat,
                 lon: locationData.body[0].lon,
-                toSelection: true
+                toItinerary: true
             })
         } catch(e) {
             return { error: e.message }
@@ -27,7 +27,7 @@ class Home extends React.Component {
     }
 
     render() { 
-            if (this.state.toSelection === true ) {
+            if (this.state.toItinerary === true ) {
                 return <Redirect to={{
                     pathname: "/create-itinerary",
                     state: {
