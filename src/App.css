@@ -17,3 +17,18 @@ footer {
   background-color: var(--color1);
   opacity: .8;
 }
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.login-h2 {
+  font-size: 1em;
+  letter-spacing: 2px;
+  color: var(--color7);
+  margin-bottom: 40px;
+}
