@@ -33,15 +33,6 @@ class Hotels extends React.Component {
     // }
 
     handleHotelState = async (hotel) => {
-        // const {
-        //     city,
-        //     business_name,
-        //     review,
-        //     rating,
-        //     image_url,
-        //     trip_id,
-        //     address
-        // } = this.state;
 
         await this.setState({
             city: hotel.city,
@@ -52,7 +43,7 @@ class Hotels extends React.Component {
             trip_id: this.props.trip_id,
             address: hotel.address
         })
-        
+
         await postChoice({
             city: this.state.city,
             business_name: this.state.business_name,
