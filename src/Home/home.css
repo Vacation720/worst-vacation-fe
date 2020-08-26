@@ -1,7 +1,38 @@
-.home-main {
-    height: 95vh;
+main {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    border: grey 2px solid;
+    height: 90vh;
     background-image: url('/home.jpeg');
     background-size: cover;
+    opacity: .8;
+    margin-top: 2px;
     background-position: bottom;
     background-repeat: no-repeat;
+}
+
+.form-submit {
+    display: grid;
+    margin-top: 100px;
+}
+
+input {
+    border: solid 3px var(--color7);
+    border-radius: 15px;
+    padding: 15px;
+    width: 300px;
+}
+
+button {
+    font-size: 1em;
+    margin-top: 10px;
+    border: var(--color7) 2px solid;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: var(--color1);
+    border-radius: 25px;
 }

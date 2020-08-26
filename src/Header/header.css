@@ -1,11 +1,15 @@
 body {
-    --flame: #e53d00ff;
-    --misty-rose: #ffe1d7ff;
-    --cultured: #fafafaff;
-    --middle-yellow: #ffe900ff;
-    --viridian-green: #21a0a0ff;
-    --rich-black-fogra-29: #000f14ff;
+    --color1: #e53d00ff;
+    --color2: #ffe1d7ff;
+    --color3: #fafafaff;
+    --color4: #ffe900ff;
+    --color5: #21a0a0ff;
+    --color6: #000f14ff;
+    --color7: #323232ff;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital@1&display=swap');
 
 header {
     display: flex;
@@ -22,16 +26,31 @@ header {
     color: #202020;
 }
 
+.logo-plane {
+    height: 130px;
+}
+
 h1 {
-    font-weight: 500;
+    display: inline-block;
+    font-family: 'Lato';
     font-style: normal;
-    font-size: 1.4rem;
-    color: var(--flame);
-    padding-left: 7px;
+    font-size: 2.5rem;
+    color: var(--color1);
+    margin-left: -6px;
 }
 
 .header-span {
-    color: #202020;
+    color: var(--color7);
+}
+
+.byline {
+    display: inline-block;
+    position: absolute;
+    margin-top: 65px;
+    margin-left: 125px;
+    font-family: 'Lato';
+    font-style: italic;
+    letter-spacing: .7px;
 }
 
 .navLinks {
@@ -40,9 +59,9 @@ h1 {
 }
 
 .login {
-    color: var(--rich-black-fogra-29);
+    color: var(--color6);
 }
 
 .signup {
-    color: var(--flame);
+    color: var(--color1);
 }
