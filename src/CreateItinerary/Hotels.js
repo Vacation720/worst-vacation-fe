@@ -32,7 +32,7 @@ class Hotels extends React.Component {
     //     })
     // }
 
-    handleHotelState = async (hotel) => {
+    handleHotelPost = async (hotel) => {
 
         await this.setState({
             city: hotel.city,
@@ -53,6 +53,8 @@ class Hotels extends React.Component {
             trip_id: this.state.trip_id,
             address: this.state.address
         })
+        
+        await this.props.didHotelsPost();
     }
     
     //when image url is empty, add stock image
@@ -61,7 +63,7 @@ class Hotels extends React.Component {
             <div>
                 {
                     this.state.hotels.map((hotel) => {
-                        return <label onClick={() => this.handleHotelState(hotel)}> <h2>{hotel.business_name}</h2> </label>
+                        return <label onClick={() => this.handleHotelPost(hotel)}> <h2>{hotel.business_name}</h2> </label>
                         })
                     }
             </div>
