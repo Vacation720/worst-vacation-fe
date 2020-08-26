@@ -5,6 +5,7 @@ body {
     --color4: #ffe900ff;
     --color5: #21a0a0ff;
     --color6: #000f14ff;
+    --color7: #323232ff;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap');
@@ -39,7 +40,7 @@ h1 {
 }
 
 .header-span {
-    color: #202020;
+    color: var(--color7);
 }
 
 .byline {

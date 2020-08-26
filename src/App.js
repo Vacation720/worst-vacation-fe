@@ -9,7 +9,7 @@ import SignIn from './Auth/SignIn.js';
 import Signup from './Auth/Signup.js';
 import Home from './Home/Home.js';
 import Header from './Header/Header';
-import Footer from './Footer';
+import Footer from './Footer/Footer.js';
 import CreateItinerary from './CreateItinerary/CreateItinerary.js';
 
 class App extends React.Component {
