@@ -7,14 +7,12 @@ class Itineraries extends React.Component {
     }
     componentDidMount = async () => {
         const tripData = await getChoices();
-        let arr =[]
+        let arr = [];
 
-        for(let i = 0; i < tripData.body.length; i++) {
-            if(tripData.body[i].trip_id === 1) {
-                arr.push(tripData.body[i])
-            }
+        for(let i = 0; i < tripData.body.length / 5; i++) {
+            arr.push(tripData.body.slice(i * 5, i * 5 + 5));
         }
-
+        console.log(arr);
         this.setState({ tripItem: arr})
     }
     
@@ -22,12 +20,12 @@ class Itineraries extends React.Component {
         console.log(this.state.tripItem)
         return (
             <div>
-                {this.state.tripItem.map(item => {
-                    return (
-                        <div>{item.business_name}</div>
-                    )
-                })}
-            </div>
+            {this.state.tripItem.map(function (subArray) {
+                return ( subArray.map(item => {
+                    return <div>{item.business_name}</div>
+                }) )
+            })}
+        </div>
         );
     }
 }
