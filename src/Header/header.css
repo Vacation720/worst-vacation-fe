@@ -1,9 +1,9 @@
 body {
     --color1: #e53d00ff;
     --color2: #ffe1d7ff;
-    --color3: #fafafaff;
+    --color3: rgb(235, 235, 235);
     --color4: #ffe900ff;
-    --color5: #21a0a0ff;
+    --color5: rgb(1, 153, 235);
     --color6: #000f14ff;
     --color7: #323232ff;
 }
