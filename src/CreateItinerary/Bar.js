@@ -11,13 +11,44 @@ class Bars extends React.Component {
         rating: 0,
         image_url: '',
         trip_id: 0,
-        address: ''
+        address: '',
+        render: false,
+        fakeBars: [{
+            "city": "Your Trip Destination",
+            "business_name": "NO BARS",
+            "business_id": "_I3Qog_lRHGlPs8cpP28YQ",
+            "address": "123 Fake St.",
+            "rating": 1,
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/h7ZjLEr2Okc8OPSbgSGKaQ/o.jpg",
+            "review": "This place sucks!",
+        },
+        {
+            "city": "Your Trip Destination",
+            "business_name": "Booger's Bar",
+            "business_id": "_I3Qog_lRHGlPs8cpP28YQ",
+            "address": "123 Fake St.",
+            "rating": 1,
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/h7ZjLEr2Okc8OPSbgSGKaQ/o.jpg",
+            "review": "This place sucks!",
+        },
+        {
+            "city": "Your Trip Destination",
+            "business_name": "Bar Land",
+            "business_id": "_I3Qog_lRHGlPs8cpP28YQ",
+            "address": "123 Fake St.",
+            "rating": 1,
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/h7ZjLEr2Okc8OPSbgSGKaQ/o.jpg",
+            "review": "This place sucks!",
+        }]
     }
 
     componentDidMount = async () => {
         const returnedBar = await getBusinesses(this.props.lat, this.props.lon, this.state.keyword);
         this.setState({ bars: returnedBar.body })
         console.log(this.state.bars);
+        setTimeout(function() { //Start the timer
+            this.setState({render: true}) //After 4 seconds, set render to true
+        }.bind(this), 2000);
     }
 
     handleBarsPost = async (bar) => {
@@ -50,9 +81,16 @@ class Bars extends React.Component {
         return (
             <div>
                 {
+                    this.state.render === true ?
+                    this.state.bars.length === 0 ?
+                    this.state.fakeBarss.map((bar) => {
+                    return <label onClick={() => this.handleBarsPost(bar)}> <h2>{bar.business_name}</h2> </label>
+                    })
+                    :
                     this.state.bars.map((bar) => {
                         return <label onClick={() => this.handleBarsPost(bar)}> <h2>{bar.business_name}</h2> </label>
                         })
+                    : null
                     }
             </div>
         );
