@@ -13,6 +13,8 @@ import Footer from './Footer/Footer.js';
 import CreateItinerary from './CreateItinerary/CreateItinerary.js';
 import TripDetails from './TripDetails/TripDetails';
 import Itineraries from './Itineraries/Itineraries';
+import AboutUs from './Footer/About.js';
+import Contact from './Footer/Contact.js';
 
 class App extends React.Component {
   state = {
@@ -67,6 +69,16 @@ class App extends React.Component {
                       path="/itineraries" 
                       exact
                       render={(routerProps) => <Itineraries handleToken={this.handleToken} token={this.state.token} {...routerProps} />} 
+                  />
+                   <Route 
+                      path="/about" 
+                      exact
+                      render={(routerProps) => <AboutUs handleToken={this.handleToken} token={this.state.token} {...routerProps} />} 
+                  />
+                   <Route 
+                      path="/contact" 
+                      exact
+                      render={(routerProps) => <Contact handleToken={this.handleToken} token={this.state.token} {...routerProps} />} 
                   />
               </Switch>
               <Footer />
