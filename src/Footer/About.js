@@ -28,7 +28,10 @@ class AboutUs extends React.Component {
                 <div className="team">
                     <h3>Josh</h3>
                     <img alt="Josh" src="http://placekitten.com/300/300" className="portrait" />
-                    <p>Here's the stuff about Josh!</p>
+                    <p>Here's the stuff about Josh!Here's the stuff about Josh!Here's the stuff about Josh!
+                    Here's the stuff about Josh!Here's the stuff about Josh!Here's the stuff about Josh!
+                    Here's the stuff about Josh!Here's the stuff about Josh!!Here's the stuff about Josh!
+                    </p>
                     <div className="bio-links">
                     <Link to="https://github.com/josholloqui">
                     <img alt="github" src="github.png" className="githubIcon" />
@@ -42,7 +45,11 @@ class AboutUs extends React.Component {
                 <div className="team">
                     <h3>Charlie</h3>
                     <img alt="Charlie" src="http://placekitten.com/300/300" className="portrait" />
-                    <p>Here's the stuff about Charlie!</p>
+                    <p>Here's the stuff about Charlie!Here's the stuff about Charlie!
+                    Here's the stuff about Charlie!Here's the stuff about Charlie!
+                    Here's the stuff about Charlie!Here's the stuff about Charlie!
+                    Here's the stuff about Charlie!Here's the stuff about Charlie!
+                    </p>
                     <div className="bio-links">
                     <Link to="https://github.com/internetcharles">
                     <img alt="github" src="github.png" className="githubIcon" />
