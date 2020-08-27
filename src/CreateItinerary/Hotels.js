@@ -12,13 +12,17 @@ class Hotels extends React.Component {
         rating: 0,
         image_url: '',
         trip_id: 0,
-        address: ''
+        address: '',
+        render: false
     }
 
     componentDidMount = async () => {
         const returnedHotel = await getBusinesses(this.props.lat, this.props.lon, this.state.keyword);
         this.setState({ hotels: returnedHotel.body })
         console.log(this.state.hotels);
+        setTimeout(function() { //Start the timer
+            this.setState({render: true}) //After 4 seconds, set render to true
+        }.bind(this), 2000);
     }
 
     handleHotelPost = async (hotel) => {
@@ -53,6 +57,8 @@ class Hotels extends React.Component {
                 <h3>Hotels</h3>
                 <div className='category-container'>
                     {
+                        
+                        this.state.render === true ?
                         this.state.hotels.map((hotel) => {
                             return (
                                 <div className='category-label' onClick={() => this.handleHotelPost(hotel)}>
@@ -65,6 +71,7 @@ class Hotels extends React.Component {
                                 </div>
                             )
                         })
+                        : <div id="cover-spin"></div>
                     }
                 </div>
             </section>

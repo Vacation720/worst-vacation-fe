@@ -112,7 +112,7 @@ class Tattoo extends React.Component {
                                 </div>
                             )
                         })
-                        : null
+                        : <div id="cover-spin"></div>
                     }
                                    
                 </div>
