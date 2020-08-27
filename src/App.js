@@ -12,6 +12,7 @@ import Header from './Header/Header';
 import Footer from './Footer/Footer.js';
 import CreateItinerary from './CreateItinerary/CreateItinerary.js';
 import TripDetails from './TripDetails/TripDetails';
+import Itineraries from './Itineraries/Itineraries';
 
 class App extends React.Component {
   state = {
@@ -61,6 +62,11 @@ class App extends React.Component {
                       path="/trip-details/:id" 
                       exact
                       render={(routerProps) => <TripDetails handleToken={this.handleToken} token={this.state.token} {...routerProps} />} 
+                  />
+                  <Route 
+                      path="/itineraries" 
+                      exact
+                      render={(routerProps) => <Itineraries handleToken={this.handleToken} token={this.state.token} {...routerProps} />} 
                   />
               </Switch>
               <Footer />
