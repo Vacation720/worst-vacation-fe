@@ -4,6 +4,7 @@ import {
   BrowserRouter as Router, 
   Route, 
   Switch,
+  Redirect,
 } from 'react-router-dom';
 import SignIn from './Auth/SignIn.js';
 import Signup from './Auth/Signup.js';
@@ -39,6 +40,9 @@ class App extends React.Component {
       <div className='app'>
         <Router>
               <Header token={this.state.token} logout={this.clearToken} />
+              {
+                  !this.state.token ? <Redirect to='/signup' /> : <></>
+              }
               <Switch>
                   <Route 
                       path="/" 
