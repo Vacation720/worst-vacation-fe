@@ -81,21 +81,44 @@ class Tattoo extends React.Component {
     //when image url is empty, add stock image
     render() { 
         return (
-            <div>
-                {
-                    this.state.render === true ?
-                    this.state.tattoos.length === 0 ?
-                    this.state.fakeTattoos.map((tattoo) => {
-                    return <label onClick={() => this.handleTattooPost(tattoo)}> <h2>{tattoo.business_name}</h2> </label>
-                    })
-                    :
-                    this.state.tattoos.map((tattoo) => {
-                    return <label onClick={() => this.handleTattooPost(tattoo)}> <h2>{tattoo.business_name}</h2> </label>
-                    })  
-                    : null
+            <section className={`${this.props.tattooDone ? 'hidden' : 'not-hidden'}`}>
+                <h3>Tattoo Shops</h3>
+                <div className='category-container'>
+                    {
+                        this.state.render === true ?
+                        this.state.tattoos.length === 0 ?
+                        this.state.fakeTattoos.map((tattoo) => {
+                            return (
+                                <div className='category-label' onClick={() => this.handleTattooPost(tattoo)}>
+                                    <img className='category-img' alt={tattoo.image_url} src={tattoo.image_url} />
+                                    <h2 className='category-h2'>{tattoo.business_name}</h2>
+                                    <h3 className='review-h2'>Rating:</h3>
+                                    <p className='rating'>{tattoo.rating} out of 5 on the Detestination Meter&#8482;</p>
+                                    <h3 className='review-h2'>Review:</h3>
+                                    <p className='review'>"{tattoo.review}"</p>
+                                </div>
+                            )
+                        })
+                        :
+                        this.state.tattoos.map((tattoo) => {
+                            return (
+                                <div className='category-label' onClick={() => this.handleTattooPost(tattoo)}>
+                                    <img className='category-img' alt={tattoo.image_url} src={tattoo.image_url} />
+                                    <h2 className='category-h2'>{tattoo.business_name}</h2>
+                                    <h3 className='review-h2'>Rating:</h3>
+                                    <p className='rating'>{tattoo.rating} out of 5 on the Detestination Meter&#8482;</p>
+                                    <h3 className='review-h2'>Review:</h3>
+                                    <p className='review'>"{tattoo.review}"</p>
+                                </div>
+                            )
+                        })
+                        : null
                     }
-            </div>
-        );
+                                   
+                </div>
+
+            </section>
+        )
     }
 }
 

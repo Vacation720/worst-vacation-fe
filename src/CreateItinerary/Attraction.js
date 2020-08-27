@@ -13,7 +13,7 @@ class Attraction extends React.Component {
         trip_id: 0,
         address: '',
         render: false,
-        fakeAttractionss: [{
+        fakeAttractions: [{
             "city": "Your Trip Destination",
             "business_name": "There are no attractions in your area!",
             "business_id": "_I3Qog_lRHGlPs8cpP28YQ",
@@ -80,21 +80,44 @@ class Attraction extends React.Component {
     //when image url is empty, add stock image
     render() { 
         return (
-            <div>
-                {
-                    this.state.render === true ?
-                    this.state.attractions.length === 0 ?
-                    this.state.fakeAttractions.map((attraction) => {
-                        return <label onClick={() => this.handleAttractionPost(attraction)}> <h2>{attraction.business_name}</h2> </label>
+            <section className={`${this.props.attractionDone ? 'hidden' : 'not-hidden'}`}>
+                <h3>Attractions</h3>
+                <div className='category-container'>
+                    {
+                        this.state.render === true ?
+                        this.state.attractions.length === 0 ?
+                        this.state.fakeAttractions.map((attraction) => {
+                            return (
+                                <div className='category-label' onClick={() => this.handleAttractionPost(attraction)}>
+                                    <img className='category-img' alt={attraction.image_url} src={attraction.image_url} />
+                                    <h2 className='category-h2'>{attraction.business_name}</h2>
+                                    <h3 className='review-h2'>Rating:</h3>
+                                    <p className='rating'>{attraction.rating} out of 5 on the Detestination Meter&#8482;</p>
+                                    <h3 className='review-h2'>Review:</h3>
+                                    <p className='review'>"{attraction.review}"</p>
+                                </div>
+                            )
                         })
-                    :
-                    this.state.attractions.map((attraction) => {
-                        return <label onClick={() => this.handleAttractionPost(attraction)}> <h2>{attraction.business_name}</h2> </label>
+                        :
+                        this.state.attractions.map((attraction) => {
+                            return (
+                                <div className='category-label' onClick={() => this.handleAttractionPost(attraction)}>
+                                    <img className='category-img' alt={attraction.image_url} src={attraction.image_url} />
+                                    <h2 className='category-h2'>{attraction.business_name}</h2>
+                                    <h3 className='review-h2'>Rating:</h3>
+                                    <p className='rating'>{attraction.rating} out of 5 on the Detestination Meter&#8482;</p>
+                                    <h3 className='review-h2'>Review:</h3>
+                                    <p className='review'>"{attraction.review}"</p>
+                                </div>
+                            )
                         })
-                    : null
-                }
-            </div>
-        );
+                        : null
+                    }
+                                   
+                </div>
+
+            </section>
+        )
     }
 }
 

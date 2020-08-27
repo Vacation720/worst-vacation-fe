@@ -48,13 +48,25 @@ class Restaurant extends React.Component {
     //when image url is empty, add stock image
     render() { 
         return (
-            <div>
-                {
-                    this.state.restaurants.map((restaurant) => {
-                        return <label onClick={() => this.handleRestaurantPost(restaurant)}> <h2>{restaurant.business_name}</h2> </label>
+            <section>
+                <h3>Restaurants</h3>
+                <div className='category-container'>
+                    {
+                        this.state.restaurants.map((restaurant) => {
+                            return (
+                                <div className='category-label' onClick={() => this.handleRestaurantPost(restaurant)}>
+                                    <img className='category-img' alt={restaurant.image_url} src={restaurant.image_url} />
+                                    <h2 className='category-h2'>{restaurant.business_name}</h2>
+                                    <h3 className='review-h2'>Rating:</h3>
+                                    <p className='rating'>{restaurant.rating} out of 5 on the Detestination Meter&#8482;</p>
+                                    <h3 className='review-h2'>Review:</h3>
+                                    <p className='review'>"{restaurant.review}"</p>
+                                </div>
+                            )
                         })
                     }
-            </div>
+                </div>
+            </section>
         );
     }
 }
