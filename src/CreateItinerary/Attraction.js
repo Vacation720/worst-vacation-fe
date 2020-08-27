@@ -111,7 +111,7 @@ class Attraction extends React.Component {
                                 </div>
                             )
                         })
-                        : null
+                        : <div id="cover-spin"></div>
                     }
                                    
                 </div>

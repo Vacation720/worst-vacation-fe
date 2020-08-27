@@ -18,6 +18,9 @@ class Restaurant extends React.Component {
         const returnedRestaurant = await getBusinesses(this.props.lat, this.props.lon, this.state.keyword);
         this.setState({ restaurants: returnedRestaurant.body })
         console.log(this.state.restaurants);
+        setTimeout(function() { //Start the timer
+            this.setState({render: true}) //After 4 seconds, set render to true
+        }.bind(this), 2000);
     }
 
     handleRestaurantPost = async (restaurant) => {
@@ -52,6 +55,7 @@ class Restaurant extends React.Component {
                 <h3>Restaurants</h3>
                 <div className='category-container'>
                     {
+                        this.state.render === true ?
                         this.state.restaurants.map((restaurant) => {
                             return (
                                 <div className='category-label' onClick={() => this.handleRestaurantPost(restaurant)}>
@@ -64,6 +68,7 @@ class Restaurant extends React.Component {
                                 </div>
                             )
                         })
+                        : <div id="cover-spin"></div>
                     }
                 </div>
             </section>
