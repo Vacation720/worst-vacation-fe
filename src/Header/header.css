@@ -65,3 +65,16 @@ h1 {
 .signup {
     color: var(--color1);
 }
+
+@media only screen and (max-device-width: 453px) {
+    header {
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        align-items: center;
+    }
+
+    .byline {
+        display: none;
+    }
+}
