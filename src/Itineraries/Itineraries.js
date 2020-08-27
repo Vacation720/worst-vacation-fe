@@ -1,5 +1,6 @@
 import React from 'react';
 import { getChoices, deleteTrip } from '../vacation-api.js';
+import './itineraries.css'
 
 class Itineraries extends React.Component {
     state = {
@@ -31,26 +32,25 @@ class Itineraries extends React.Component {
     
     render() {
         return (
-            <div>
+            <div className="i-category-container">
                 {
-                    this.state.tripItem.map(subArray => {
+                    this.state.tripItem.map((subArray, i) => {
                         return (
-                            <div>
+                            <div className="i-category-label">
                                 {console.log(subArray)}
-                                <h2>hello</h2>
+                                <h2>{this.state.tripItem[i].city}</h2>
+                                <div className="i-business-thing">
                                 {
                                     subArray.map(item => {
                                         return (
-                                            <>
-                                                <div>{item.business_name}</div>
-                                                {item.image_url ? <img src={item.image_url} alt={item.business_name}/> : <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/600px-No_image_available.svg.png" alt="Not Found" />}
-                                                <div>RATING: {item.rating}</div>
-                                                <div>"{item.review}"</div>
-                                                <div>{item.address ? item.address : "Unknown"}, {item.city}</div>                                            
-                                            </>
+                                            <div>
+                                                <div className="i-category-h2">{item.business_name}</div>
+                                                {item.image_url ? <img className="i-category-img" src={item.image_url} alt={item.business_name}/> : <img className="i-category-img"nbpm src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/600px-No_image_available.svg.png" alt="Not Found" />}                                            
+                                            </div>
                                         )
                                     })
                                 }
+                                </div>
                                 <button onClick={() => this.handleDelete(subArray[0].trip_id)}>Delete Trip</button>
                             </div>
                         )
