@@ -16,18 +16,30 @@ class Itineraries extends React.Component {
         this.setState({ tripItem: arr})
     }
     
-    render() { 
-        console.log(this.state.tripItem)
+    render() {
         return (
             <div>
-            {this.state.tripItem.map(function (subArray) {
-                return ( subArray.map(item => {
-                    return <div>{item.business_name}</div>
-                }) )
-            })}
-        </div>
-        );
+                {
+                    this.state.tripItem.map(function(subArray) {
+                        return (
+                            <div>
+                                <h2>hello</h2>
+                                {
+                                    subArray.map(item => {
+                                        return (
+                                            <>
+                                                <div>{item.business_name}</div>
+                                            </>
+                                        )
+                                    })
+                                }
+                            </div>
+                        )
+                    })
+                }
+            </div>
+        )
     }
 }
- 
+
 export default Itineraries;
