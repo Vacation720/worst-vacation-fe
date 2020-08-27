@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 import Hotels from './Hotels.js';
 import Restaurant from './Restaurant.js'
 import Bars from './Bar.js'
@@ -18,7 +19,11 @@ class CreateItinerary extends React.Component {
     }
 
     render() {
-        console.log(this.state.didHotelsPost); 
+        if (this.state.didRestaurantPost === true ) {
+            return <Redirect to={{
+                pathname: `/trip-details/${this.state.trip_id}`
+              }} />
+        }
         return (
             <div>
                 <Hotels didHotelsPost={() => this.setState({ didHotelsPost: true })} trip_id={this.state.trip_id} lat={ this.state.lat } lon={ this.state.lon }/>
@@ -29,14 +34,11 @@ class CreateItinerary extends React.Component {
                     this.state.didBarsPost ? <Tattoo didTattooPost={() => this.setState({ didTattooPost: true })} trip_id={this.state.trip_id} lat={ this.state.lat } lon={ this.state.lon }/> : null
                 }
                 {
-                    this.state.didTattooPost ? <Attraction didTattooPost={() => this.setState({ didTattooPost: true })} trip_id={this.state.trip_id} lat={ this.state.lat } lon={ this.state.lon }/> : null
+                    this.state.didTattooPost ? <Attraction didAttractionPost={() => this.setState({ didAttractionPost: true })} trip_id={this.state.trip_id} lat={ this.state.lat } lon={ this.state.lon }/> : null
                 }
                 {
-                    this.state.didAttractionPost ? <Restaurant didAttractionPost={() => this.setState({ didAttractionPost: true })} trip_id={this.state.trip_id} lat={ this.state.lat } lon={ this.state.lon }/> : null
+                    this.state.didAttractionPost ? <Restaurant didRestaurantPost={() => this.setState({ didRestaurantPost: true })} trip_id={this.state.trip_id} lat={ this.state.lat } lon={ this.state.lon }/> : null
                 }
-                {/* <Tattoo lat={ this.state.lat } lon={ this.state.lon }/> */}
-                {/* <Attraction lat={ this.state.lat } lon={ this.state.lon }/> */}
-                {/* <Restaurant lat={ this.state.lat } lon={ this.state.lon }/> */}
             </div>
         );
     }

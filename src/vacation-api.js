@@ -46,3 +46,16 @@ export function postChoice(chosenItem) {
         return { error: e.message };
     }
 }
+
+export function getItinerary(trip_id) {
+    const token = localStorage.getItem('token');
+
+    try {
+        return request
+            .get(`${URL}/api/detail-page/${trip_id}`)
+            .set('Authorization', token);
+    }
+    catch (e) {
+        return { error: e.message };
+    }
+}

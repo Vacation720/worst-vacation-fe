@@ -11,6 +11,7 @@ import Home from './Home/Home.js';
 import Header from './Header/Header';
 import Footer from './Footer/Footer.js';
 import CreateItinerary from './CreateItinerary/CreateItinerary.js';
+import TripDetails from './TripDetails/TripDetails';
 
 class App extends React.Component {
   state = {
@@ -54,6 +55,11 @@ class App extends React.Component {
                       path="/create-itinerary" 
                       exact
                       render={(routerProps) => <CreateItinerary handleToken={this.handleToken} token={this.state.token} {...routerProps} />} 
+                  />
+                  <Route 
+                      path="/trip-details/:id" 
+                      exact
+                      render={(routerProps) => <TripDetails handleToken={this.handleToken} token={this.state.token} {...routerProps} />} 
                   />
               </Switch>
               <Footer />

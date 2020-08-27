@@ -1,5 +1,5 @@
 import React from 'react';
-import { getBusinesses } from '../vacation-api.js'
+import { getBusinesses, postChoice } from '../vacation-api.js'
 
 class Attraction extends React.Component {
     state = {
@@ -20,18 +20,6 @@ class Attraction extends React.Component {
         console.log(this.state.attractions);
     }
 
-    // handleClick = async () => {
-    //     this.setState({
-    //         city: hotel.city,
-    //         business_name: '',
-    //         review: '',
-    //         rating: 0,
-    //         image_url: '',
-    //         trip_id: 0,
-    //         address: ''
-    //     })
-    // }
-    
     handleAttractionPost = async (attraction) => {
 
         await this.setState({
@@ -54,7 +42,7 @@ class Attraction extends React.Component {
             address: this.state.address
         })
         
-        await this.props.didAttractionsPost();
+        await this.props.didAttractionPost();
     }
         
 
