@@ -19,7 +19,7 @@ class Bars extends React.Component {
             "business_id": "_I3Qog_lRHGlPs8cpP28YQ",
             "address": "123 Fake St.",
             "rating": 1,
-            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/h7ZjLEr2Okc8OPSbgSGKaQ/o.jpg",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/600px-No_image_available.svg.png",
             "review": "This place sucks!",
         },
         {
@@ -28,7 +28,7 @@ class Bars extends React.Component {
             "business_id": "_I3Qog_lRHGlPs8cpP28YQ",
             "address": "123 Fake St.",
             "rating": 1,
-            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/h7ZjLEr2Okc8OPSbgSGKaQ/o.jpg",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/600px-No_image_available.svg.png",
             "review": "This place sucks!",
         },
         {
@@ -37,7 +37,7 @@ class Bars extends React.Component {
             "business_id": "_I3Qog_lRHGlPs8cpP28YQ",
             "address": "123 Fake St.",
             "rating": 1,
-            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/h7ZjLEr2Okc8OPSbgSGKaQ/o.jpg",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/600px-No_image_available.svg.png",
             "review": "This place sucks!",
         }]
     }
@@ -88,7 +88,7 @@ class Bars extends React.Component {
                         this.state.fakeBars.map((bar) => {
                             return (
                                 <div className='category-label' onClick={() => this.handleBarsPost(bar)}>
-                                    <img className='category-img' alt={bar.image_url} src={bar.image_url} />
+                                    {bar.image_url ? <img className='category-img' img src={bar.image_url} alt={bar.business_name}/> : <img className='category-img' src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/600px-No_image_available.svg.png" alt="Not Found" />}
                                     <h2 className='category-h2'>{bar.business_name}</h2>
                                     <h3 className='review-h2'>Rating:</h3>
                                     <p className='rating'>{bar.rating} out of 5 on the Detestination Meter&#8482;</p>
@@ -101,7 +101,7 @@ class Bars extends React.Component {
                         this.state.bars.map((bar) => {
                             return (
                                 <div className='category-label' onClick={() => this.handleBarsPost(bar)}>
-                                    <img className='category-img' alt={bar.image_url} src={bar.image_url} />
+                                    {bar.image_url ? <img className='category-img' img src={bar.image_url} alt={bar.business_name}/> : <img className='category-img' src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/600px-No_image_available.svg.png" alt="Not Found" />}
                                     <h2 className='category-h2'>{bar.business_name}</h2>
                                     <h3 className='review-h2'>Rating:</h3>
                                     <p className='rating'>{bar.rating} out of 5 on the Detestination Meter&#8482;</p>
