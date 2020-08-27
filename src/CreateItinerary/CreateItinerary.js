@@ -25,8 +25,9 @@ class CreateItinerary extends React.Component {
               }} />
         }
         return (
-            <div>
-                <Hotels didHotelsPost={() => this.setState({ didHotelsPost: true })} trip_id={this.props.trip_id} lat={ this.state.lat } lon={ this.state.lon }/>
+            <main className='itinerary-main'>
+                <h2>Let's Plan Your Itinerary</h2>
+                <Hotels didHotelsPost={() => this.setState({ didHotelsPost: true })} trip_id={this.props.trip_id} lat={ this.state.lat } lon={ this.state.lon } hotelsDone={this.state.didHotelsPost} />
                 {
                     this.state.didHotelsPost ? <Bars didBarsPost={() => this.setState({ didBarsPost: true })} trip_id={this.props.trip_id} lat={ this.state.lat } lon={ this.state.lon }/> : null
                 }
@@ -39,7 +40,7 @@ class CreateItinerary extends React.Component {
                 {
                     this.state.didAttractionPost ? <Restaurant didRestaurantPost={() => this.setState({ didRestaurantPost: true })} trip_id={this.props.trip_id} lat={ this.state.lat } lon={ this.state.lon }/> : null
                 }
-            </div>
+            </main>
         );
     }
 }

@@ -12,7 +12,7 @@ class Itineraries extends React.Component {
         for(let i = 0; i < tripData.body.length / 5; i++) {
             arr.push(tripData.body.slice(i * 5, i * 5 + 5));
         }
-        console.log(arr);
+
         this.setState({ tripItem: arr})
     }
 
@@ -24,23 +24,32 @@ class Itineraries extends React.Component {
         this.setState({ tripItem: data.body })
         }
     
-    render() { 
-        console.log(this.state.tripItem)
+    render() {
         return (
             <div>
-                <div>
-                <button onClick={() => this.handleDelete(this.state.tripItem[0][0].trip_id)}>Delete Trip</button>
-                </div>
-
-            {this.state.tripItem.map(function (subArray) {
-                return ( subArray.map(item => {
-                    return <div>{item.business_name}</div>
-                }) )
-            })}
-        </div>
-      
-        );
+                {
+                    this.state.tripItem.map(subArray => {
+                        return (
+                            <div>
+                                {console.log(subArray)}
+                                <h2>hello</h2>
+                                {
+                                    subArray.map(item => {
+                                        return (
+                                            <>
+                                                <div>{item.business_name}</div>
+                                            </>
+                                        )
+                                    })
+                                }
+                                <button onClick={() => this.handleDelete(subArray[0].trip_id)}>Delete Trip</button>
+                            </div>
+                        )
+                    })
+                }
+            </div>
+        )
     }
 }
- 
+
 export default Itineraries;

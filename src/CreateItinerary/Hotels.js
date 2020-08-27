@@ -1,5 +1,6 @@
 import React from 'react';
 import { getBusinesses, postChoice } from '../vacation-api.js'
+import './create-itinerary.css';
 
 class Hotels extends React.Component {
     state = {
@@ -48,13 +49,25 @@ class Hotels extends React.Component {
     //when image url is empty, add stock image
     render() { 
         return (
-            <div>
-                {
-                    this.state.hotels.map((hotel) => {
-                        return <label onClick={() => this.handleHotelPost(hotel)}> <h2>{hotel.business_name}</h2> </label>
+            <section className={`${this.props.hotelsDone ? 'hidden' : 'not-hidden'}`}>
+                <h3>Hotels</h3>
+                <div className='hotel-container'>
+                    {
+                        this.state.hotels.map((hotel) => {
+                            return (
+                                <div className='hotel-label' onClick={() => this.handleHotelPost(hotel)}>
+                                    <img className='hotel-img' alt={hotel.image_url} src={hotel.image_url} />
+                                    <h2 className='category-h2'>{hotel.business_name}</h2>
+                                    <p className='rating'>Rating: {hotel.rating}</p>
+                                    <h3 className='review-h2'>Review</h3>
+                                    <p className='review'>"{hotel.review}"</p>
+                                </div>
+                            )
                         })
                     }
-            </div>
+                </div>
+
+            </section>
         );
     }
 }
