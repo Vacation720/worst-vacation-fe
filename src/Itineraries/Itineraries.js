@@ -1,5 +1,5 @@
 import React from 'react';
-import { getChoices } from '../vacation-api.js';
+import { getChoices, deleteTrip } from '../vacation-api.js';
 
 class Itineraries extends React.Component {
     state = {
@@ -15,17 +15,30 @@ class Itineraries extends React.Component {
         console.log(arr);
         this.setState({ tripItem: arr})
     }
+
+    handleDelete = async (id) => {
+        await deleteTrip(id);
+
+        const data = await getChoices(this.props.token)
+    
+        this.setState({ tripItem: data.body })
+        }
     
     render() { 
         console.log(this.state.tripItem)
         return (
             <div>
+                <div>
+                <button onClick={() => this.handleDelete(this.state.tripItem[0][0].trip_id)}>Delete Trip</button>
+                </div>
+
             {this.state.tripItem.map(function (subArray) {
                 return ( subArray.map(item => {
                     return <div>{item.business_name}</div>
                 }) )
             })}
         </div>
+      
         );
     }
 }

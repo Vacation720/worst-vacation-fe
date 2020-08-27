@@ -72,3 +72,10 @@ export function getItinerary(trip_id) {
         return { error: e.message };
     }
 }
+
+export function deleteTrip(id) {
+    const token = localStorage.getItem('token');
+
+    return request.delete(`${URL}/api/detail-page/${id}`)
+        .set('Authorization', token);
+}
