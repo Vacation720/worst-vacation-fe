@@ -1,38 +1,63 @@
+
 main {
-    display: flex;
-    flex-direction: column;
-    justify-items: center;
-    align-items: center;
     border: grey 2px solid;
-    height: 90vh;
+    height: 95vh;
     background-image: url('/home.jpeg');
     background-size: cover;
     opacity: .8;
     margin-top: 2px;
     background-position: bottom;
     background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
 }
 
 .form-submit {
-    display: grid;
+    position: fixed;
     margin-top: 100px;
 }
 
 input {
+    width: 200px;
+    max-width: 300px;
     border: solid 3px var(--color7);
     border-radius: 15px;
     padding: 15px;
-    width: 300px;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    text-align: start;
+    display: flex !important;
+    align-items: center !important;
 }
 
 button {
+    height: 40px;
+    width: 150px;
     font-size: 1em;
     margin-top: 10px;
     border: var(--color7) 2px solid;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 10px;
-    padding-bottom: 10px;
     background-color: var(--color1);
     border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0 3px 5px var(--color7);
+    margin-left: 45px;
 }
+
+@media only screen and (max-device-width: 491px) {
+  
+   .home-main {
+        background-size: 250%;
+    }
+  }
+
+  @media only screen and (max-device-width: 452px) {
+  
+    .home-main {
+         background-size: 280%;
+     }
+   }
