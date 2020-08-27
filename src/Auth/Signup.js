@@ -1,6 +1,7 @@
 import React from 'react';
 import { signUp } from '../vacation-api.js';
 import { Link } from 'react-router-dom';
+import '../App.css'
 
 class Signup extends React.Component {
     state = {

@@ -1,0 +1,17 @@
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    font-family: 'Lato';
+    font-size: .8em;
+    background-color: var(--color1);
+    opacity: .8;
+    border: solid 2px var(--color7);
+    box-shadow: 0 2px 5px var(--color6);
+    letter-spacing: 1.3px;
+}
