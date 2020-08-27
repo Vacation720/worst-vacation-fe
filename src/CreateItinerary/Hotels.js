@@ -51,22 +51,22 @@ class Hotels extends React.Component {
         return (
             <section className={`${this.props.hotelsDone ? 'hidden' : 'not-hidden'}`}>
                 <h3>Hotels</h3>
-                <div className='hotel-container'>
+                <div className='category-container'>
                     {
                         this.state.hotels.map((hotel) => {
                             return (
-                                <div className='hotel-label' onClick={() => this.handleHotelPost(hotel)}>
-                                    <img className='hotel-img' alt={hotel.image_url} src={hotel.image_url} />
+                                <div className='category-label' onClick={() => this.handleHotelPost(hotel)}>
+                                    <img className='category-img' alt={hotel.image_url} src={hotel.image_url} />
                                     <h2 className='category-h2'>{hotel.business_name}</h2>
-                                    <p className='rating'>Rating: {hotel.rating}</p>
-                                    <h3 className='review-h2'>Review</h3>
+                                    <h3 className='review-h2'>Rating:</h3>
+                                    <p className='rating'>{hotel.rating} out of 5 on the Detestination Meter&#8482;</p>
+                                    <h3 className='review-h2'>Review:</h3>
                                     <p className='review'>"{hotel.review}"</p>
                                 </div>
                             )
                         })
                     }
                 </div>
-
             </section>
         );
     }

@@ -29,13 +29,13 @@ class CreateItinerary extends React.Component {
                 <h2>Let's Plan Your Itinerary</h2>
                 <Hotels didHotelsPost={() => this.setState({ didHotelsPost: true })} trip_id={this.props.trip_id} lat={ this.state.lat } lon={ this.state.lon } hotelsDone={this.state.didHotelsPost} />
                 {
-                    this.state.didHotelsPost ? <Bars didBarsPost={() => this.setState({ didBarsPost: true })} trip_id={this.props.trip_id} lat={ this.state.lat } lon={ this.state.lon }/> : null
+                    this.state.didHotelsPost ? <Bars didBarsPost={() => this.setState({ didBarsPost: true })} trip_id={this.props.trip_id} lat={ this.state.lat } lon={ this.state.lon } barsDone={this.state.didBarsPost} /> : null
                 }
                 {
-                    this.state.didBarsPost ? <Tattoo didTattooPost={() => this.setState({ didTattooPost: true })} trip_id={this.props.trip_id} lat={ this.state.lat } lon={ this.state.lon }/> : null
+                    this.state.didBarsPost ? <Tattoo didTattooPost={() => this.setState({ didTattooPost: true })} trip_id={this.props.trip_id} lat={ this.state.lat } lon={ this.state.lon } tattooDone={this.state.didTattooPost} /> : null
                 }
                 {
-                    this.state.didTattooPost ? <Attraction didAttractionPost={() => this.setState({ didAttractionPost: true })} trip_id={this.props.trip_id} lat={ this.state.lat } lon={ this.state.lon }/> : null
+                    this.state.didTattooPost ? <Attraction didAttractionPost={() => this.setState({ didAttractionPost: true })} trip_id={this.props.trip_id} lat={ this.state.lat } lon={ this.state.lon } attractionDone={this.state.didAttractionPost} /> : null
                 }
                 {
                     this.state.didAttractionPost ? <Restaurant didRestaurantPost={() => this.setState({ didRestaurantPost: true })} trip_id={this.props.trip_id} lat={ this.state.lat } lon={ this.state.lon }/> : null

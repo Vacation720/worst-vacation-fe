@@ -79,21 +79,44 @@ class Bars extends React.Component {
     //when image url is empty, add stock image
     render() { 
         return (
-            <div>
-                {
-                    this.state.render === true ?
-                    this.state.bars.length === 0 ?
-                    this.state.fakeBarss.map((bar) => {
-                    return <label onClick={() => this.handleBarsPost(bar)}> <h2>{bar.business_name}</h2> </label>
-                    })
-                    :
-                    this.state.bars.map((bar) => {
-                        return <label onClick={() => this.handleBarsPost(bar)}> <h2>{bar.business_name}</h2> </label>
+            <section className={`${this.props.barsDone ? 'hidden' : 'not-hidden'}`}>
+                <h3>Bars</h3>
+                <div className='category-container'>
+                    {
+                        this.state.render === true ?
+                        this.state.bars.length === 0 ?
+                        this.state.fakeBars.map((bar) => {
+                            return (
+                                <div className='category-label' onClick={() => this.handleBarsPost(bar)}>
+                                    <img className='category-img' alt={bar.image_url} src={bar.image_url} />
+                                    <h2 className='category-h2'>{bar.business_name}</h2>
+                                    <h3 className='review-h2'>Rating:</h3>
+                                    <p className='rating'>{bar.rating} out of 5 on the Detestination Meter&#8482;</p>
+                                    <h3 className='review-h2'>Review:</h3>
+                                    <p className='review'>"{bar.review}"</p>
+                                </div>
+                            )
                         })
-                    : null
+                        :
+                        this.state.bars.map((bar) => {
+                            return (
+                                <div className='category-label' onClick={() => this.handleBarsPost(bar)}>
+                                    <img className='category-img' alt={bar.image_url} src={bar.image_url} />
+                                    <h2 className='category-h2'>{bar.business_name}</h2>
+                                    <h3 className='review-h2'>Rating:</h3>
+                                    <p className='rating'>{bar.rating} out of 5 on the Detestination Meter&#8482;</p>
+                                    <h3 className='review-h2'>Review:</h3>
+                                    <p className='review'>"{bar.review}"</p>
+                                </div>
+                            )
+                        })
+                        : null
                     }
-            </div>
-        );
+                                   
+                </div>
+
+            </section>
+        )
     }
 }
 
