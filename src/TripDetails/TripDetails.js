@@ -6,7 +6,7 @@ class TripDetails extends React.Component {
         tripItem: []
     }
     componentDidMount = async () => {
-        const tripData = await getItinerary(1);
+        const tripData = await getItinerary(this.props.match.params.id);
 
         this.setState({
             tripItem: tripData.body
@@ -17,11 +17,11 @@ class TripDetails extends React.Component {
         console.log(this.state.tripItem)
         return (
             <div>
-                {/* {this.state.tripItem.map(item => {
+                {this.state.tripItem.map(item => {
                     return (
-                        <div>{item.name}</div>
+                        <div>{item.business_name}</div>
                     )
-                })} */}
+                })}
             </div>
         );
     }

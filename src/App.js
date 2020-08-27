@@ -16,6 +16,7 @@ import TripDetails from './TripDetails/TripDetails';
 class App extends React.Component {
   state = {
     token: localStorage.getItem('token'),
+    trip_id: 1
   }
 
   handleToken = (token) => {
@@ -54,7 +55,7 @@ class App extends React.Component {
                   <Route 
                       path="/create-itinerary" 
                       exact
-                      render={(routerProps) => <CreateItinerary handleToken={this.handleToken} token={this.state.token} {...routerProps} />} 
+                      render={(routerProps) => <CreateItinerary changeTripId={() => this.setState({ trip_id: this.state.trip_id + 1})} trip_id={this.state.trip_id} handleToken={this.handleToken} token={this.state.token} {...routerProps} />} 
                   />
                   <Route 
                       path="/trip-details/:id" 

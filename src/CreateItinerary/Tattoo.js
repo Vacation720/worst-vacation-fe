@@ -22,14 +22,17 @@ class Tattoo extends React.Component {
 
     handleTattooPost = async (tattoo) => {
 
+        if (tattoo.address === null) {
+            this.setState({ address: `Somewhere in ${tattoo.city}`})
+        };
+
         await this.setState({
             city: tattoo.city,
             business_name: tattoo.business_name,
             review: tattoo.review,
             rating: tattoo.rating,
             image_url: tattoo.image_url,
-            trip_id: this.props.trip_id,
-            address: tattoo.address
+            trip_id: this.props.trip_id
         })
 
         await postChoice({
