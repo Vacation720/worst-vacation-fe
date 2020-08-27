@@ -7,11 +7,11 @@ class AboutUs extends React.Component {
     render() { 
         return (
             <main className="about-main">
-                <h3 className="meet">MEET ENTERTAINMENT720</h3>
+                <h3 className="meet">MEET VACATION720</h3>
                 <div className="bios">
                 <div className="team">
                     <h3>Ryan</h3>
-                    <img alt="Ryan" src="http://placekitten.com/300/300" className="portrait" />
+                    <img alt="Ryan" src="ryan.png" className="portrait" />
                     <p>I'm Ryan Diffensparkles, co-founder of Vaction720: the ultimate travel conglomerate.
                         I believe that our lowest points can be the most memorable. With Detestination, you can highlight the lowlights
                         and plan a trip you won't soon forget.</p>
@@ -27,10 +27,11 @@ class AboutUs extends React.Component {
                 
                 <div className="team">
                     <h3>Josh</h3>
-                    <img alt="Josh" src="http://placekitten.com/300/300" className="portrait" />
-                    <p>Here's the stuff about Josh!Here's the stuff about Josh!Here's the stuff about Josh!
-                    Here's the stuff about Josh!Here's the stuff about Josh!Here's the stuff about Josh!
-                    Here's the stuff about Josh!Here's the stuff about Josh!!Here's the stuff about Josh!
+                    <img alt="Josh" src="josh.jpg" className="portrait" />
+                    <p>Hello, my name is Josh and welcome to Detestination (patent pending…). 
+                        This is the world’s sickest travel itinerary maker that the whole family will love. 
+                        We have millions and millions of daily users from the likes of Zark Muckerburg to Beff Jezos. 
+                        If I can convince my family members to use this app, so can you!
                     </p>
                     <div className="bio-links">
                     <Link to="https://github.com/josholloqui">
@@ -44,11 +45,10 @@ class AboutUs extends React.Component {
                 
                 <div className="team">
                     <h3>Charlie</h3>
-                    <img alt="Charlie" src="http://placekitten.com/300/300" className="portrait" />
-                    <p>Here's the stuff about Charlie!Here's the stuff about Charlie!
-                    Here's the stuff about Charlie!Here's the stuff about Charlie!
-                    Here's the stuff about Charlie!Here's the stuff about Charlie!
-                    Here's the stuff about Charlie!Here's the stuff about Charlie!
+                    <img alt="Charlie" src="charlie.png" className="portrait" />
+                    <p>I'm Charlie, also known as the "arbiter of nightmare vacations." 
+                        Why take your family to Disneyland when you can take them to the 1-star rated Gangnam Style Bar (a real place) 
+                        in Downtown LA? I don't know, and neither do you. Please enjoy Detestination.
                     </p>
                     <div className="bio-links">
                     <Link to="https://github.com/internetcharles">
@@ -62,10 +62,10 @@ class AboutUs extends React.Component {
 
                 <div className="team">
                     <h3>Brooke</h3>
-                    <img alt="Brooke" src="http://placekitten.com/300/300" className="portrait" />
-                    <p>Welcome to Entertainment720, where the worst stuff is the best stuff!
+                    <img alt="Brooke" src="brooke.png" className="portrait" />
+                    <p>Welcome to Vacation720, where the worst stuff is the best stuff!
                         I'm Brooke, and I'm thrilled to be a part of the team that curates your delightfully awful travel experience.
-                        As an avid travel fan, I appreciate the unique experience Detestination
+                        As an avid travel fan, I appreciate the unique and horrifying experiences Detestination
                         offers its users. 
                     </p>
                     <div className="bio-links">
