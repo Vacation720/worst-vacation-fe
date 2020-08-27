@@ -12,10 +12,12 @@ import Header from './Header/Header';
 import Footer from './Footer/Footer.js';
 import CreateItinerary from './CreateItinerary/CreateItinerary.js';
 import TripDetails from './TripDetails/TripDetails';
+import Itineraries from './Itineraries/Itineraries';
 
 class App extends React.Component {
   state = {
     token: localStorage.getItem('token'),
+    trip_id: 1
   }
 
   handleToken = (token) => {
@@ -54,12 +56,17 @@ class App extends React.Component {
                   <Route 
                       path="/create-itinerary" 
                       exact
-                      render={(routerProps) => <CreateItinerary handleToken={this.handleToken} token={this.state.token} {...routerProps} />} 
+                      render={(routerProps) => <CreateItinerary changeTripId={() => this.setState({ trip_id: this.state.trip_id + 1})} trip_id={this.state.trip_id} handleToken={this.handleToken} token={this.state.token} {...routerProps} />} 
                   />
                   <Route 
                       path="/trip-details/:id" 
                       exact
                       render={(routerProps) => <TripDetails handleToken={this.handleToken} token={this.state.token} {...routerProps} />} 
+                  />
+                  <Route 
+                      path="/itineraries" 
+                      exact
+                      render={(routerProps) => <Itineraries handleToken={this.handleToken} token={this.state.token} {...routerProps} />} 
                   />
               </Switch>
               <Footer />

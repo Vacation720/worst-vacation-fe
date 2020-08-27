@@ -47,6 +47,19 @@ export function postChoice(chosenItem) {
     }
 }
 
+export function getChoices() {
+    const token = localStorage.getItem('token');
+
+    try {
+        return request
+            .get(`${URL}/api/detail-page`)
+            .set('Authorization', token);
+    }
+    catch (e) {
+        return { error: e.message };
+    }
+}
+
 export function getItinerary(trip_id) {
     const token = localStorage.getItem('token');
 
