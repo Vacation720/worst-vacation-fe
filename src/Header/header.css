@@ -68,6 +68,7 @@ h1 {
 
 @media only screen and (max-device-width: 453px) {
     header {
+        width: 100%;
         display: flex;
         flex-direction: column;
         justify-items: center;
