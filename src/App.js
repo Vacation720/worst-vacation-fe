@@ -15,7 +15,6 @@ import TripDetails from './TripDetails/TripDetails';
 import Itineraries from './Itineraries/Itineraries';
 import AboutUs from './Footer/About.js';
 import Contact from './Footer/Contact.js';
-import FAQ from './Footer/FAQ.js';
 
 class App extends React.Component {
   state = {
@@ -80,11 +79,6 @@ class App extends React.Component {
                       path="/contact" 
                       exact
                       render={(routerProps) => <Contact handleToken={this.handleToken} token={this.state.token} {...routerProps} />} 
-                  />
-                   <Route 
-                      path="/faq" 
-                      exact
-                      render={(routerProps) => <FAQ handleToken={this.handleToken} token={this.state.token} {...routerProps} />} 
                   />
               </Switch>
               <Footer />
