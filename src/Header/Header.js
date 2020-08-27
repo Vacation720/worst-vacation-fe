@@ -10,7 +10,7 @@ class Header extends React.Component {
                 <div>
                     <Link className='logo-div' to="/">
                     <img alt="logo" className="logo-plane" src='plane.png' />
-                        <h1>DETEST<span className='header-span'>INATION</span></h1>
+                        <h1 className="detest">DETEST<span className='header-span'>INATION</span></h1>
                         <p className="byline">The Five-Star App for One-Star Experiences</p>
                     </Link>
                 </div>

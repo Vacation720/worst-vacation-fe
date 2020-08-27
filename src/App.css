@@ -4,7 +4,7 @@
 }
 
 footer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
   height: auto;
@@ -16,19 +16,21 @@ footer {
   align-items: center;
   background-color: var(--color1);
   opacity: .8;
+  border: solid 2px var(--color7);
+  box-shadow: 0 2px 5px var(--color6)
 }
 
-.login-container {
-  display: flex;
+/* .login-container {
+  /* display: flex;
   flex-direction: column;
   justify-items: center;
   align-items: center;
-  margin-top: 50px;
-}
-
+  margin-top: 50px; */
+/* } */
+/* 
 .login-h2 {
   font-size: 1em;
   letter-spacing: 2px;
   color: var(--color7);
   margin-bottom: 40px;
-}
+} */
