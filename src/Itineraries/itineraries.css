@@ -17,6 +17,7 @@
     grid-gap: 30px;
     height: 100%;
     grid-template-rows: repeat(auto-fit, minmax(350px, 1fr));
+    padding-top: 20px;
 }
 
 .i-category-label {
