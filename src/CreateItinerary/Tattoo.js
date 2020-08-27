@@ -11,20 +11,50 @@ class Tattoo extends React.Component {
         rating: 0,
         image_url: '',
         trip_id: 0,
-        address: ''
+        address: '',
+        render: false,
+        fakeTattoos: [{
+            "city": "Your Trip Destination",
+            "business_name": "Booger's Tattoos",
+            "business_id": "_I3Qog_lRHGlPs8cpP28YQ",
+            "address": "123 Fake St.",
+            "rating": 1,
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/h7ZjLEr2Okc8OPSbgSGKaQ/o.jpg",
+            "review": "This place sucks!",
+        },
+        {
+            "city": "Your Trip Destination",
+            "business_name": "Tats by Stanley",
+            "business_id": "_I3Qog_lRHGlPs8cpP28YQ",
+            "address": "123 Fake St.",
+            "rating": 1,
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/h7ZjLEr2Okc8OPSbgSGKaQ/o.jpg",
+            "review": "This place sucks!",
+        },
+        {
+            "city": "Your Trip Destination",
+            "business_name": "Local Jail",
+            "business_id": "_I3Qog_lRHGlPs8cpP28YQ",
+            "address": "123 Fake St.",
+            "rating": 1,
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/h7ZjLEr2Okc8OPSbgSGKaQ/o.jpg",
+            "review": "This place sucks!",
+        }]
     }
+    
 
     componentDidMount = async () => {
         const returnedTattoo = await getBusinesses(this.props.lat, this.props.lon, this.state.keyword);
         this.setState({ tattoos: returnedTattoo.body })
         console.log(this.state.tattoos);
+        setTimeout(function() { //Start the timer
+            this.setState({render: true}) //After 4 seconds, set render to true
+        }.bind(this), 2000);
     }
 
-    handleTattooPost = async (tattoo) => {
 
-        if (tattoo.address === null) {
-            this.setState({ address: `Somewhere in ${tattoo.city}`})
-        };
+
+    handleTattooPost = async (tattoo) => {
 
         await this.setState({
             city: tattoo.city,
@@ -53,9 +83,16 @@ class Tattoo extends React.Component {
         return (
             <div>
                 {
+                    this.state.render === true ?
+                    this.state.tattoos.length === 0 ?
+                    this.state.fakeTattoos.map((tattoo) => {
+                    return <label onClick={() => this.handleTattooPost(tattoo)}> <h2>{tattoo.business_name}</h2> </label>
+                    })
+                    :
                     this.state.tattoos.map((tattoo) => {
-                        return <label onClick={() => this.handleTattooPost(tattoo)}> <h2>{tattoo.business_name}</h2> </label>
-                        })
+                    return <label onClick={() => this.handleTattooPost(tattoo)}> <h2>{tattoo.business_name}</h2> </label>
+                    })  
+                    : null
                     }
             </div>
         );
