@@ -37,7 +37,7 @@ class Home extends React.Component {
                   }} />
             }
         return (
-            <main>
+            <main className='home-main'>
                 <form onSubmit={this.handleSearch} className="form-submit">
                     <input placeholder="Where are you going?" onChange={(e) => this.setState({ search: e.target.value })} value={this.state.search} />
                     <button type="submit">Submit</button>

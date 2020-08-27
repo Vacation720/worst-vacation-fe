@@ -1,0 +1,54 @@
+.itinerary-main {
+    height: 100%;
+    min-height: 85vh;
+}
+
+.hotel-container {
+    display: grid;
+    text-align: center;
+    margin: 0 15px;
+    grid-gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+
+.hotel-label {
+    border: none;
+    height: 412px;
+    width: 375px;
+    border-radius: 20px;
+    background-color: #ffe1d7ff;
+    overflow: hidden;
+    justify-self: center;
+    box-shadow: 0 3px 10px rgba(57, 63, 72, 0.3);
+    cursor: pointer;
+}
+
+.hotel-label:hover {
+    box-shadow: 0px 9px 19px 2px rgba(57, 63, 72, 0.4);
+    height: 422px;
+    width: 385px;
+    background-color: rgb(255, 219, 208);
+}
+
+.hotel-img {
+    height: 200px;
+    width: 100%;
+}
+
+.category-h2 {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.review-h2 {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.review {
+    margin: 5px 5px;
+}
+
+.rating {
+    font-size: .8rem;
+}
