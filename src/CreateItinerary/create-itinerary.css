@@ -52,3 +52,7 @@
 .rating {
     font-size: .8rem;
 }
+
+.hidden {
+    display: none;
+}

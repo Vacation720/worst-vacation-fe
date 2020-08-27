@@ -49,7 +49,7 @@ class Hotels extends React.Component {
     //when image url is empty, add stock image
     render() { 
         return (
-            <section>
+            <section className={`${this.props.hotelsDone ? 'hidden' : 'not-hidden'}`}>
                 <h3>Hotels</h3>
                 <div className='hotel-container'>
                     {
