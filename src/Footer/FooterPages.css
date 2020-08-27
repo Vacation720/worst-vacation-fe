@@ -3,6 +3,10 @@
 }
 
 .meet {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
     font-family: 'Lato';
     font-size: 2em;
     letter-spacing: 8px;
