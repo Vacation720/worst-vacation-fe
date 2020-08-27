@@ -38,7 +38,6 @@ class Itineraries extends React.Component {
                         return (
                             <div className="i-category-label">
                                 {console.log(subArray)}
-                                <h2>{this.state.tripItem[i].city}</h2>
                                 <div className="i-business-thing">
                                 {
                                     subArray.map(item => {
