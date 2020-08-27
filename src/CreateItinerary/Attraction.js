@@ -3,7 +3,7 @@ import { getBusinesses, postChoice } from '../vacation-api.js'
 
 class Attraction extends React.Component {
     state = {
-        keyword: 'attraction',
+        keyword: 'arts',
         attractions: [],
         city: '',
         business_name: '',
