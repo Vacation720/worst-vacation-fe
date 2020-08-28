@@ -20,8 +20,8 @@ class Hotels extends React.Component {
         const returnedHotel = await getBusinesses(this.props.lat, this.props.lon, this.state.keyword);
         this.setState({ hotels: returnedHotel.body })
         console.log(this.state.hotels);
-        setTimeout(function() { //Start the timer
-            this.setState({render: true}) //After 4 seconds, set render to true
+        setTimeout(function() { 
+            this.setState({render: true})
         }.bind(this), 2000);
     }
 
@@ -50,7 +50,6 @@ class Hotels extends React.Component {
         await this.props.didHotelsPost();
     }
     
-    //when image url is empty, add stock image
     render() { 
         return (
             <section className={`${this.props.hotelsDone ? 'hidden' : 'not-hidden'}`}>
@@ -79,6 +78,4 @@ class Hotels extends React.Component {
     }
 }
 
-
- 
 export default Hotels;

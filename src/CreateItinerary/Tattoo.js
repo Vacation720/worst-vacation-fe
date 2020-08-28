@@ -42,17 +42,14 @@ class Tattoo extends React.Component {
         }]
     }
     
-
     componentDidMount = async () => {
         const returnedTattoo = await getBusinesses(this.props.lat, this.props.lon, this.state.keyword);
         this.setState({ tattoos: returnedTattoo.body })
         console.log(this.state.tattoos);
-        setTimeout(function() { //Start the timer
-            this.setState({render: true}) //After 4 seconds, set render to true
+        setTimeout(function() {
+            this.setState({render: true})
         }.bind(this), 2000);
     }
-
-
 
     handleTattooPost = async (tattoo) => {
 
@@ -78,7 +75,6 @@ class Tattoo extends React.Component {
         await this.props.didTattooPost();
     }
     
-    //when image url is empty, add stock image
     render() { 
         return (
             <section className={`${this.props.tattooDone ? 'hidden' : 'not-hidden'}`}>
@@ -122,6 +118,4 @@ class Tattoo extends React.Component {
     }
 }
 
-
- 
 export default Tattoo;

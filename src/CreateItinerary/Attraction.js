@@ -46,8 +46,8 @@ class Attraction extends React.Component {
         const returnedAttraction = await getBusinesses(this.props.lat, this.props.lon, this.state.keyword);
         this.setState({ attractions: returnedAttraction.body })
         console.log(this.state.attractions);
-        setTimeout(function() { //Start the timer
-            this.setState({render: true}) //After 4 seconds, set render to true
+        setTimeout(function() {
+            this.setState({render: true})
         }.bind(this), 2000)
     }
 
@@ -76,8 +76,6 @@ class Attraction extends React.Component {
         await this.props.didAttractionPost();
     }
         
-
-    //when image url is empty, add stock image
     render() { 
         return (
             <section className={`${this.props.attractionDone ? 'hidden' : 'not-hidden'}`}>
@@ -121,6 +119,4 @@ class Attraction extends React.Component {
     }
 }
 
-
- 
 export default Attraction;
