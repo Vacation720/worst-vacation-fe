@@ -32,13 +32,24 @@ class TripDetails extends React.Component {
                 <h2 className='details-h2'>My Trip</h2>
                 {this.state.tripItem.map(array => {
                     return array.map(item => {
-                        return <div className="trip-thing">
-                            <div className="name-detail">{item.business_name}</div>
-                            {item.image_url ? <img className="image-detail" src={item.image_url} alt={item.business_name}/> : <img className="image-detail" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/600px-No_image_available.svg.png" alt="Not Found" />}
-                            <div className="rating-detail">DETESTINATION METER &#8482; : {item.rating}</div>
-                            <div className="review-detail">"{item.review}"</div>
-                            <div className="address-detail">{item.address ? item.address : "Unknown"}, {item.city}</div>
+                        return (
+                            <div className="trip-thing">
+                                <h1 className="name-detail">{item.business_name}</h1>
+                                {item.image_url ? <img className="image-detail" src={item.image_url} alt={item.business_name}/> : <img className="image-detail" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/600px-No_image_available.svg.png" alt="Not Found" />}
+                                <div className='subsection-category'>
+                                    <h3 className='subsection-h3'>DETESTINATION METER &#8482; :</h3>
+                                    <p className='subsection-rating'>{item.rating}</p>
+                                </div>
+                                <div className='subsection-category'>
+                                    <h3 className='subsection-h3'>Review</h3>
+                                    <p>"{item.review}"</p>
+                                </div>
+                                <div className='subsection-category'>
+                                    <h3 className='subsection-h3'>Address</h3>
+                                    <p className='subsection-address'>{item.address ? item.address : "Unknown"}, {item.city}</p>
+                                </div>
                             </div>
+                        )
                     })
                 })
             }
