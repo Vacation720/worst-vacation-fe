@@ -36,7 +36,7 @@ input {
     background-color: rgba(235, 235, 235, 0.842);
     /* max-width: 300px; */
     border: solid 1px #272727;
-    border-radius: 15px 0px 0px 15px;
+    border-radius: 40px 0px 0px 40px;
     padding: 10px;
     font-weight: 600;
     font-size: 1rem;
@@ -59,7 +59,7 @@ button {
     border: #272727 1px solid;
     border-left: none;
     background-color: var(--color1);
-    border-radius: 0px 15px 15px 0px;
+    border-radius: 0px 40px 40px 0px;
     cursor: pointer;
     box-shadow: 0 10px 5px rgba(0, 0, 0, 0.7);
     padding: 10px;

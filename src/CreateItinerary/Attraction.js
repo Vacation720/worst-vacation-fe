@@ -81,7 +81,7 @@ class Attraction extends React.Component {
     render() { 
         return (
             <section className={`${this.props.attractionDone ? 'hidden' : 'not-hidden'}`}>
-                <h3>Attractions</h3>
+                <h3 className='category-h3'>Attractions</h3>
                 <div className='category-container'>
                     {
                         this.state.render === true ?

@@ -82,7 +82,7 @@ class Tattoo extends React.Component {
     render() { 
         return (
             <section className={`${this.props.tattooDone ? 'hidden' : 'not-hidden'}`}>
-                <h3>Tattoo Shops</h3>
+                <h3 className='category-h3'>Tattoo Shops</h3>
                 <div className='category-container'>
                     {
                         this.state.render === true ?

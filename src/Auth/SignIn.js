@@ -27,11 +27,11 @@ class SignIn extends React.Component {
                 <h2 className='login-h2'>LOG IN:</h2>
                 <form className='login-form' onSubmit={this.handleSignIn}>
                     <label className='login-label'>
-                        <h3>Email</h3>
+                        <h3 className='auth-h3'>Email</h3>
                         <input className='login-input' type='email' autoComplete="username" onChange={e => this.setState({ signInEmail: e.target.value })} value={this.state.signInEmail}/>
                     </label>
                     <label className='login-label'>
-                        <h3>Password</h3>
+                        <h3 className='auth-h3'>Password</h3>
                         <input className='login-input' type="password" autoComplete="current-password" onChange={e => this.setState({ signInPassword: e.target.value })} value={ this.state.signInPassword}/>
                     </label>
                     <div className='login-div'>

@@ -54,7 +54,7 @@ class Hotels extends React.Component {
     render() { 
         return (
             <section className={`${this.props.hotelsDone ? 'hidden' : 'not-hidden'}`}>
-                <h3>Hotels</h3>
+                <h3 className='category-h3'>Hotels</h3>
                 <div className='category-container'>
                     {
                         

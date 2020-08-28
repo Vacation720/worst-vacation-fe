@@ -52,7 +52,7 @@ class Restaurant extends React.Component {
     render() { 
         return (
             <section>
-                <h3>Restaurants</h3>
+                <h3 className='category-h3'>Restaurants</h3>
                 <div className='category-container'>
                     {
                         this.state.render === true ?

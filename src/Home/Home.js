@@ -2,6 +2,7 @@ import React from 'react';
 import './home.css';
 import { getLocation } from '../vacation-api.js';
 import { Redirect } from 'react-router-dom';
+
 class Home extends React.Component {
     state = {
         search: '',
@@ -34,7 +35,8 @@ class Home extends React.Component {
                     pathname: "/create-itinerary",
                     state: {
                         lat: this.state.lat,
-                        lon: this.state.lon
+                        lon: this.state.lon,
+                        search: this.state.search
                     }
                   }} />
             }
