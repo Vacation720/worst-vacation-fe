@@ -6,6 +6,7 @@ import { Redirect } from 'react-router-dom';
 class Home extends React.Component {
     state = {
         search: '',
+        location: '',
         lat: '',
         lon: '',
         toItinerary: false
@@ -19,8 +20,10 @@ class Home extends React.Component {
             this.setState({
                 lat: locationData.body[0].lat,
                 lon: locationData.body[0].lon,
+                location: locationData.body[0].display_name,
                 toItinerary: true
             })
+            console.log(locationData.body)
         } catch(e) {
             return { error: e.message }
         }
@@ -36,7 +39,7 @@ class Home extends React.Component {
                     state: {
                         lat: this.state.lat,
                         lon: this.state.lon,
-                        search: this.state.search
+                        location: this.state.location
                     }
                   }} />
             }
@@ -45,7 +48,7 @@ class Home extends React.Component {
             <main className="home-main">
                 <h2 className='home-h2'>Get out and stretch your imagination</h2>
                 <form onSubmit={this.handleSearch} className="form-submit">
-                    <input spellcheck="false" placeholder="Where are you going?" onChange={(e) => this.setState({ search: e.target.value })} value={this.state.search} />
+                    <input placeholder="Where are you going?" onChange={(e) => this.setState({ search: e.target.value })} value={this.state.search} />
                     <button type="submit">Search</button>
                 </form>
             </main>

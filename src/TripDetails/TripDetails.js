@@ -29,6 +29,7 @@ class TripDetails extends React.Component {
         console.log(this.state.tripItem)
             return (
             <main className="details-main">
+                <h2 className='details-h2'>My Trip</h2>
                 {this.state.tripItem.map(array => {
                     return array.map(item => {
                         return <div className="trip-thing">

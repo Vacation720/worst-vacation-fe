@@ -10,12 +10,20 @@ class CreateItinerary extends React.Component {
     state = {
         lat: this.props.location.state.lat,
         lon: this.props.location.state.lon,
-        search: this.props.location.state.search,
+        location: '',
         didHotelsPost: false,
         didBarsPost: false,
         didTattooPost: false,
         didAttractionPost: false,
         didRestaurantPost: false
+    }
+
+    componentDidMount = async () => {
+        const address = this.props.location.state.location.replace(/,/g, '').split(' ');
+
+        await this.setState({
+            location: `${address[0]}, ${address[3]}`
+        })
     }
 
     render() {
@@ -25,9 +33,10 @@ class CreateItinerary extends React.Component {
                 pathname: `/trip-details/${this.props.trip_id}`
               }} />
         }
+
         return (
             <main className='itinerary-main'>
-                <h2 className='create-h2'>Let's Plan Your Trip to <span className='location-searched'>{this.state.search}</span></h2>
+                <h2 className='create-h2'>Let's Plan Your Trip to <span className='location-searched'>{this.state.location}</span></h2>
                 <Hotels didHotelsPost={() => this.setState({ didHotelsPost: true })} trip_id={this.props.trip_id} lat={ this.state.lat } lon={ this.state.lon } hotelsDone={this.state.didHotelsPost} />
                 {
                     this.state.didHotelsPost ? <Bars didBarsPost={() => this.setState({ didBarsPost: true })} trip_id={this.props.trip_id} lat={ this.state.lat } lon={ this.state.lon } barsDone={this.state.didBarsPost} /> : null
