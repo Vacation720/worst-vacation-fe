@@ -46,6 +46,4 @@ class CreateItinerary extends React.Component {
     }
 }
 
-
- 
 export default CreateItinerary;

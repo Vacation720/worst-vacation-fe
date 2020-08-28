@@ -50,7 +50,7 @@ class Itineraries extends React.Component {
                                     })
                                 }
                                 </div>
-                                <button onClick={() => this.handleDelete(subArray[0].trip_id)}>Delete Trip</button>
+                                <button className="itinerary-button" onClick={() => this.handleDelete(subArray[0].trip_id)}>Delete Trip</button>
                             </div>
                         )
                     })

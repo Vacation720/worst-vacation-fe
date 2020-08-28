@@ -18,8 +18,8 @@ class Restaurant extends React.Component {
         const returnedRestaurant = await getBusinesses(this.props.lat, this.props.lon, this.state.keyword);
         this.setState({ restaurants: returnedRestaurant.body })
         console.log(this.state.restaurants);
-        setTimeout(function() { //Start the timer
-            this.setState({render: true}) //After 4 seconds, set render to true
+        setTimeout(function() {
+            this.setState({render: true})
         }.bind(this), 2000);
     }
 
@@ -48,7 +48,6 @@ class Restaurant extends React.Component {
         await this.props.didRestaurantPost();
     }
 
-    //when image url is empty, add stock image
     render() { 
         return (
             <section>
@@ -76,6 +75,4 @@ class Restaurant extends React.Component {
     }
 }
 
-
- 
 export default Restaurant;

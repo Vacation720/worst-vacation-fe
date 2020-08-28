@@ -1,0 +1,52 @@
+.details-main {
+    height: 100%;
+    min-height: 85vh;
+}
+
+.trip-thing {
+    border: solid 2px var(--color6);
+    margin: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    height: 100%;
+    border-radius: 20px;
+    background-color: #ffe1d7ff;
+    justify-self: center;
+    box-shadow: 0 3px 10px rgba(57, 63, 72, 0.3);
+    cursor: pointer;
+}
+
+.rating-detail, .name-detail, .review-detail, .address-detail {
+    text-align: center;
+    font-family: 'Lato';
+    height: 100%;
+    padding: 10px;
+}
+
+.name-detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2em;
+}
+
+.image-detail {
+    height: 230px;
+    width: 100%;
+    padding: 5px;
+}
+
+@media only screen and (max-device-width: 814px) {
+    .details-main, .trip-thing {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-items: center;
+      }
+    
+    .image-detail {
+        height: 230px;
+        width: auto;
+        border: solid 3px var(--color6);
+    }
+ }
