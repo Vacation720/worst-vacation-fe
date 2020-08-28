@@ -21,6 +21,7 @@
 }
 
 .i-category-label {
+    font-family: 'Lato';
     border: none;
     height: 412px;
     width: 100%;
@@ -36,6 +37,7 @@
 .i-category-img {
     height: 230px;
     width: 100%;
+    padding: 5px;
 }
 
 .i-category-h2 {
@@ -60,3 +62,28 @@
     font-size: .85rem;
     margin: 10px 10px;
 }
+
+
+@media only screen and (max-device-width: 814px) {
+    .i-itinerary-main, .i-business-thing {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-items: center;
+          padding-top: 10px;
+      }
+    
+    .i-category-img {
+        height: 230px;
+        width: auto;
+        border: solid 3px var(--color6);
+        margin-bottom: 20px;
+    }
+
+    .itinerary-button {
+        float: none;
+        border: solid; 
+        border-radius: 25px;
+        margin: 20px;
+    }
+ }
