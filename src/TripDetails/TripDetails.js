@@ -1,5 +1,6 @@
 import React from 'react';
 import { getItinerary } from '../vacation-api.js';
+import './trip-details.css'
 
 class TripDetails extends React.Component {
     state = {
@@ -27,20 +28,20 @@ class TripDetails extends React.Component {
     render() { 
         console.log(this.state.tripItem)
             return (
-            <div>
+            <main className="details-main">
                 {this.state.tripItem.map(array => {
                     return array.map(item => {
-                        return <div>
-                            <div>{item.business_name}</div>
-                            {item.image_url ? <img src={item.image_url} alt={item.business_name}/> : <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/600px-No_image_available.svg.png" alt="Not Found" />}
-                            <div>RATING: {item.rating}</div>
-                            <div>"{item.review}"</div>
-                            <div>{item.address ? item.address : "Unknown"}, {item.city}</div>
+                        return <div className="trip-thing">
+                            <div className="name-detail">{item.business_name}</div>
+                            {item.image_url ? <img className="image-detail" src={item.image_url} alt={item.business_name}/> : <img className="image-detail" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/600px-No_image_available.svg.png" alt="Not Found" />}
+                            <div className="rating-detail">DETESTINATION METER &#8482;: {item.rating}</div>
+                            <div className="review-detail">"{item.review}"</div>
+                            <div className="address-detail">{item.address ? item.address : "Unknown"}, {item.city}</div>
                             </div>
                     })
                 })
             }
-            </div>
+            </main>
         );
     }
 }
