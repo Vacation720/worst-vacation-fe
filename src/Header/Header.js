@@ -14,7 +14,7 @@ class Header extends React.Component {
                         <p className="byline">The Five-Star App for One-Star Experiences</p>
                     </Link>
                 </div>
-                <nav>
+                <nav className='auth-options'>
                     {
                         !this.props.token &&
                         <>
@@ -24,7 +24,10 @@ class Header extends React.Component {
                     }
                     {
                         this.props.token &&
+                        <>
+                        <Link className="navLinks signup" to="/my-trips">My Trips</Link>
                         <Link className="navLinks signup" onClick={this.props.logout} to="/">Logout</Link>
+                        </>
                     }
                 </nav>
             </header>
