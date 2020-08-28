@@ -1,26 +1,34 @@
-
-
 .i-itinerary-main {
     height: 100%;
-    min-height: 85vh;
+}
+
+.itinerary-button {
+    float: none;
+    border: solid; 
+    border-radius: 25px;
+    margin: 20px;
 }
 
 .i-business-thing {
+    padding: 10px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }
 
 .i-category-container {
+    border: solid 2px var(--color7);
+    border-radius: 20px;
     display: grid;
     text-align: center;
     margin: 0 15px;
     grid-gap: 30px;
     height: 100%;
     grid-template-rows: repeat(auto-fit, minmax(350px, 1fr));
-    padding-top: 20px;
+    margin: 20px;
 }
 
 .i-category-label {
+    font-family: 'Lato';
     border: none;
     height: 412px;
     width: 100%;
@@ -28,14 +36,17 @@
     border-radius: 20px;
     background-color: #ffe1d7ff;
     justify-self: center;
+    justify-content: space-evenly;
     box-shadow: 0 3px 10px rgba(57, 63, 72, 0.3);
     cursor: pointer;
 }
 
 
 .i-category-img {
+    border: solid 2px var(--color7);
     height: 230px;
-    width: 100%;
+    width: 80%;
+    padding: 5px;
 }
 
 .i-category-h2 {
@@ -60,3 +71,37 @@
     font-size: .85rem;
     margin: 10px 10px;
 }
+
+@media only screen and (max-device-width: 1317px) {
+
+.i-business-thing {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+}
+
+@media only screen and (max-device-width: 814px) {
+    .i-itinerary-main, .i-business-thing {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-items: center;
+          padding-top: 10px;
+      }
+    }
+    
+    .i-category-img {
+        height: 230px;
+        width: auto;
+        border: solid 3px var(--color6);
+        margin-bottom: 20px;
+    }
+
+    .itinerary-button {
+        float: none;
+        border: solid; 
+        border-radius: 25px;
+        margin: 20px;
+    }
+ }
