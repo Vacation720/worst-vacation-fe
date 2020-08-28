@@ -1,7 +1,7 @@
 import React from 'react';
 import { signIn } from '../vacation-api.js';
 import { Link } from 'react-router-dom';
-import '../App.css';
+import './auth.css';
 
 class SignIn extends React.Component {
     state = {

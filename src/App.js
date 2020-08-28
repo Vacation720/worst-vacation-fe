@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import {
   BrowserRouter as Router, 
   Route, 
@@ -70,7 +69,7 @@ class App extends React.Component {
                       render={(routerProps) => <TripDetails handleToken={this.handleToken} token={this.state.token} {...routerProps} />} 
                   />
                   <Route 
-                      path="/itineraries" 
+                      path="/my-trips" 
                       exact
                       render={(routerProps) => <Itineraries handleToken={this.handleToken} token={this.state.token} {...routerProps} />} 
                   />

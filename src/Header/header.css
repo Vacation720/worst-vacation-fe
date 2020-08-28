@@ -12,12 +12,13 @@ body {
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital@1&display=swap');
 
 header {
-    display: flex;
+    display: grid;
     background-color: #272727;
+    grid-template-columns: repeat(2, 1fr);
     justify-content: space-between;
     align-items: center;
     padding: 0 1rem;
-    box-shadow: 0 20px 10px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.7);
 }
 
 .logo-div {
@@ -37,6 +38,7 @@ h1 {
     font-style: normal;
     color: var(--color1);
     margin-left: -6px;
+    margin-left: 5px;
 }
 
 .header-span {
@@ -48,7 +50,7 @@ h1 {
     display: inline-block;
     position: absolute;
     margin-top: 65px;
-    margin-left: 125px;
+    margin-left: 90px;
     font-family: 'Lato';
     font-style: italic;
     letter-spacing: .7px;
@@ -57,6 +59,10 @@ h1 {
 .navLinks {
     padding-left: 50px;
     text-decoration: none;
+}
+
+.auth-options {
+    text-align: right;
 }
 
 .login {
@@ -85,4 +91,8 @@ h1 {
     .byline {
         display: none;
     }
+}
+
+.nav {
+    text-align: start;
 }
