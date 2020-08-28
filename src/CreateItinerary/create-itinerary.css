@@ -4,6 +4,21 @@
     padding: 0 20px;
 }
 
+.create-h2 {
+    font-size: 50px;
+    color: #202020;
+    text-align: center;
+}
+
+.location-searched {
+    text-transform: capitalize;
+}
+
+.category-h3 {
+    font-size: 28px;
+    text-align: center;
+}
+
 .category-container {
     display: grid;
     text-align: center;

@@ -79,7 +79,7 @@ class Bars extends React.Component {
     render() { 
         return (
             <section className={`${this.props.barsDone ? 'hidden' : 'not-hidden'}`}>
-                <h3>Bars</h3>
+                <h3 className='category-h3'>Bars</h3>
                 <div className='category-container'>
                     {
                         this.state.render === true ?

@@ -27,11 +27,11 @@ class Signup extends React.Component {
                 <h2 className='login-h2'>SIGN UP:</h2>
                 <form className='login-form' onSubmit={this.handleSignUp}>
                     <label className='login-label'>
-                    <h3>Email</h3>
+                    <h3 className='auth-h3'>Email</h3>
                         <input className='login-input' type='email' autoComplete="username" onChange={e => this.setState({ signUpEmail: e.target.value })} value={this.state.signUpEmail}/>
                     </label>
                     <label className='login-label'>
-                        <h3>Password</h3>
+                        <h3 className='auth-h3'>Password</h3>
                         <input className='login-input' type="password" autoComplete="current-password" onChange={e => this.setState({ signUpPassword: e.target.value })} value={ this.state.signUpPassword}/>
                     </label>
                     <div className='login-div'>
