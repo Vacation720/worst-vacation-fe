@@ -66,3 +66,51 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+# Detestination by Vacation 720
+
+## Team members     
+    * Brooke Perkins
+
+    * Charlie Smith
+
+    * Josh Olloqui
+
+    * Ryan W. Diffenbaugh
+
+## About Detestination
+
+    * Detestination allows users to plan a less than five star vacation for a five star memory. 
+
+    * The Yelp API by nature wants to push the most positively reviewed locations when filtering by keywords such as Hotels, Restaurants, Bars, ect. We thought it would be fun to reverse that inclination to plan different kind of vacation, one where the memories are made not of leisure but inconvenience. 
+
+## Versions
+
+    * 1.0.0: 
+        * Created wire frame
+        * Launched React backend
+        * Hard coded data to organize and structure out backend 
+        * Get location endpoint
+        * Fetched data from Yelp and Location IQ and munged it into the correct shape
+
+    * 1.0.1
+        * Created a React frontend
+        * Created POST, GET, DELETE routes
+        * Added a sign up / login page
+        * Create and build list page and list page end point
+        * Added CSS styling
+
+    * 1.0.2
+        * Set up API page tokens and put tokens into local storage
+        * Created front end pages and linked them together
+        * Created selector functions
+        * Refine how we displayed our fetched data
+        * Wrote and implemented tests for endpoints  
+        * Added CSS styling
+
+    * 1.0.3
+        * Added delete trip endpoint
+        * Wrote and implemented tests for endpoints   
+        * Added additional pages to the front end
+        * Added a loading animation
+        * Finished up CSS styling
