@@ -46,8 +46,8 @@ class Bars extends React.Component {
         const returnedBar = await getBusinesses(this.props.lat, this.props.lon, this.state.keyword);
         this.setState({ bars: returnedBar.body })
         console.log(this.state.bars);
-        setTimeout(function() { //Start the timer
-            this.setState({render: true}) //After 4 seconds, set render to true
+        setTimeout(function() {
+            this.setState({render: true})
         }.bind(this), 2000);
     }
 
@@ -76,7 +76,6 @@ class Bars extends React.Component {
         await this.props.didBarsPost();
     }
     
-    //when image url is empty, add stock image
     render() { 
         return (
             <section className={`${this.props.barsDone ? 'hidden' : 'not-hidden'}`}>
@@ -120,6 +119,4 @@ class Bars extends React.Component {
     }
 }
 
-
- 
 export default Bars;
