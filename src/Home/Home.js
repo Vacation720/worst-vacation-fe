@@ -38,6 +38,7 @@ class Home extends React.Component {
             }
         return (
             <main className="home-main">
+                <h2 className='home-h2'>Get out and stretch your imagination</h2>
                 <form onSubmit={this.handleSearch} className="form-submit">
                     <input spellcheck="false" placeholder="Where are you going?" onChange={(e) => this.setState({ search: e.target.value })} value={this.state.search} />
                     <button type="submit">Submit</button>

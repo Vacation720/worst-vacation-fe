@@ -1,63 +1,71 @@
 
 .home-main {
-    border: grey 2px solid;
+    display: grid !important;
+    grid-template-rows: auto 1fr !important;
+    /* border: grey 2px solid; */
     height: 95vh;
-    background-image: url('/home.jpeg');
+    background-image: url('/plane.jpg');
     background-size: cover;
     opacity: .8;
-    margin-top: 2px;
     background-position: bottom;
     background-repeat: no-repeat;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-items: center;
+}
+
+.home-h2 {
+    padding-top: 10px;
+    font-size: 68px;
+    margin: 15px 20px;
+    font-weight: 700;
+    text-align: center;
+    color: #E7EAEF;
+    -webkit-text-stroke: 1.25px #272727;
 }
 
 .form-submit {
-    position: fixed;
-    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 30px;
 }
 
 input {
-    width: 200px;
-    max-width: 300px;
-    border: solid 3px var(--color7);
-    border-radius: 15px;
-    padding: 15px;
+    float: left;
+    height: 40px;
+    width: 80%;
+    background-color: rgba(235, 235, 235, 0.842);
+    /* max-width: 300px; */
+    border: solid 2px var(--color7);
+    border-radius: 15px 0px 0px 15px;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 1rem;
     letter-spacing: normal;
     word-spacing: normal;
     text-transform: none;
     text-indent: 0px;
     text-shadow: none;
-    text-align: start;
-    display: flex !important;
-    align-items: center !important;
+    text-align: center;
 }
 
 button {
-    height: 40px;
+    width: 20%;
+    height: 64px;
+    float: left;
     width: 150px;
     font-size: 1em;
-    margin-top: 10px;
     border: var(--color7) 2px solid;
+    border-left: none;
     background-color: var(--color1);
-    border-radius: 25px;
+    border-radius: 0px 15px 15px 0px;
     cursor: pointer;
-    box-shadow: 0 3px 5px var(--color7);
-    margin-left: 45px;
+    /* box-shadow: 0 3px 5px var(--color7); */
+    padding: 10px;
 }
 
-@media only screen and (max-device-width: 491px) {
-  
-   .home-main {
-        background-size: 250%;
-    }
-  }
 
-  @media only screen and (max-device-width: 452px) {
-  
-    .home-main {
-         background-size: 280%;
+ @media only screen and (max-device-width: 452px) {
+   .home-main {
+         background-size: cover;
+         background-position: center;
      }
-   }
+}

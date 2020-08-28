@@ -1,5 +1,5 @@
 body {
-    --color1: #e53d00ff;
+    --color1: rgb(243, 88, 41);
     --color2: #ffe1d7ff;
     --color3: rgb(235, 235, 235);
     --color4: #ffe900ff;
@@ -13,37 +13,38 @@ body {
 
 header {
     display: flex;
+    background-color: #272727;
     justify-content: space-between;
     align-items: center;
     padding: 0 1rem;
-    box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+    box-shadow: 0 20px 10px rgba(0, 0, 0, 0.7);
 }
 
 .logo-div {
     display: flex;
     align-items: center;
     text-decoration: none;
-    color: #202020;
+    color: #333333;
 }
 
 .logo-plane {
-    height: 130px;
+    height: 85px;
 }
 
 h1 {
     display: inline-block;
     font-family: 'Lato';
     font-style: normal;
-    font-size: 2.5rem;
     color: var(--color1);
     margin-left: -6px;
 }
 
 .header-span {
-    color: var(--color7);
+    color: #E7EAEF;
 }
 
 .byline {
+    color: rgb(150, 150, 150);
     display: inline-block;
     position: absolute;
     margin-top: 65px;
@@ -69,10 +70,16 @@ h1 {
 @media only screen and (max-device-width: 453px) {
     header {
         width: 100%;
+        padding: 0;
         display: flex;
         flex-direction: column;
         justify-items: center;
         align-items: center;
+    }
+
+    .logo-div {
+        display: flex;
+        flex-direction: column;
     }
 
     .byline {
