@@ -1,0 +1,57 @@
+.details-main {
+    height: 100%;
+    min-height: 85vh;
+}
+
+.trip-thing {
+    border: solid 2px  var(--color6);
+    margin: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    border: none;
+    height: 412px;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    background-color: #ffe1d7ff;
+    justify-self: center;
+    box-shadow: 0 3px 10px rgba(57, 63, 72, 0.3);
+    cursor: pointer;
+}
+
+.name-detail {
+    font-family: 'Lato';
+    font-size: 2rem;
+    text-align: center;
+    grid-gap: 30px;
+    height: 100%;
+    padding: 50px;
+}
+
+.rating-detail {
+    text-align: center;
+    grid-gap: 30px;
+    height: 100%;
+    justify-items: center;
+    align-items: center;
+}
+
+.name-detail {
+    text-align: center;
+    grid-gap: 30px;
+    height: 100%;
+    padding-top: 20px;
+}
+
+.address-detail {
+    text-align: center;
+    grid-gap: 30px;
+    height: 100%;
+    padding-top: 20px;
+}
+
+.image-detail {
+    height: 230px;
+    width: 100%;
+    padding: 5px;
+}
