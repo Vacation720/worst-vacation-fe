@@ -59,7 +59,7 @@ class Restaurant extends React.Component {
                         this.state.restaurants.map((restaurant) => {
                             return (
                                 <div className='category-label' onClick={() => this.handleRestaurantPost(restaurant)}>
-                                    <img className='category-img' alt={restaurant.image_url} src={restaurant.image_url} />
+                                    {restaurant.image_url ? <img className='category-img' img src={restaurant.image_url} alt={restaurant.business_name}/> : <img className='category-img' src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/600px-No_image_available.svg.png" alt="Not Found" />}
                                     <h2 className='category-h2'>{restaurant.business_name}</h2>
                                     <h3 className='review-h2'>Rating:</h3>
                                     <p className='rating'>{restaurant.rating} out of 5 on the Detestination Meter&#8482;</p>

@@ -27,6 +27,8 @@ class Home extends React.Component {
     }
 
     render() { 
+
+
             if (this.state.toItinerary === true ) {
                 return <Redirect to={{
                     pathname: "/create-itinerary",
@@ -37,6 +39,7 @@ class Home extends React.Component {
                   }} />
             }
         return (
+            
             <main className="home-main">
                 <h2 className='home-h2'>Get out and stretch your imagination</h2>
                 <form onSubmit={this.handleSearch} className="form-submit">

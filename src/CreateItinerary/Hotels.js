@@ -62,7 +62,7 @@ class Hotels extends React.Component {
                         this.state.hotels.map((hotel) => {
                             return (
                                 <div className='category-label' onClick={() => this.handleHotelPost(hotel)}>
-                                    <img className='category-img' alt={hotel.image_url} src={hotel.image_url} />
+                                    {hotel.image_url ? <img className='category-img' img src={hotel.image_url} alt={hotel.business_name}/> : <img className='category-img' src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/600px-No_image_available.svg.png" alt="Not Found" />}
                                     <h2 className='category-h2'>{hotel.business_name}</h2>
                                     <h3 className='review-h2'>Rating:</h3>
                                     <p className='rating'>{hotel.rating} out of 5 on the Detestination Meter&#8482;</p>
