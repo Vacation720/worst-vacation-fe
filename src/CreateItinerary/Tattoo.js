@@ -45,10 +45,8 @@ class Tattoo extends React.Component {
     componentDidMount = async () => {
         const returnedTattoo = await getBusinesses(this.props.lat, this.props.lon, this.state.keyword);
         this.setState({ tattoos: returnedTattoo.body })
-        console.log(this.state.tattoos);
-        setTimeout(function() {
-            this.setState({render: true})
-        }.bind(this), 2000);
+        // no need to bind.(this) if you use an arrow function
+        setTimeout(() => this.setState({render: true}), 2000);
     }
 
     handleTattooPost = async (tattoo) => {
