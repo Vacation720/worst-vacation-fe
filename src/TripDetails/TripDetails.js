@@ -13,13 +13,10 @@ class TripDetails extends React.Component {
 
         if (tripData.body.length > 5) {
             newTripData.push(tripData.body.slice(tripData.body.length - 5, tripData.body.length))
-        }
-        else {
+        } else {
             newTripData.push(tripData.body)
         }
         
-        console.log(newTripData)
-
         this.setState({
             tripItem: newTripData
         })

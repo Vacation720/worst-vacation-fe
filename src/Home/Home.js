@@ -16,14 +16,13 @@ class Home extends React.Component {
         e.preventDefault();
         try {
             const locationData = await getLocation(this.state.search);
-
+            const { lat, long, display_name} = locationData.body[0]
             this.setState({
-                lat: locationData.body[0].lat,
-                lon: locationData.body[0].lon,
-                location: locationData.body[0].display_name,
+                lat,
+                lon: long,
+                location: display_name,
                 toItinerary: true
             })
-            console.log(locationData.body)
         } catch(e) {
             return { error: e.message }
         }
@@ -31,8 +30,6 @@ class Home extends React.Component {
     }
 
     render() { 
-
-
             if (this.state.toItinerary === true ) {
                 return <Redirect to={{
                     pathname: "/create-itinerary",
@@ -48,7 +45,10 @@ class Home extends React.Component {
             <main className="home-main">
                 <h2 className='home-h2'>Get out and stretch your imagination</h2>
                 <form onSubmit={this.handleSearch} className="form-submit">
-                    <input placeholder="Where are you going?" onChange={(e) => this.setState({ search: e.target.value })} value={this.state.search} />
+                    <input 
+                        placeholder="Where are you going?" 
+                        onChange={(e) => this.setState({ search: e.target.value })} 
+                        value={this.state.search} />
                     <button type="submit">Search</button>
                 </form>
             </main>

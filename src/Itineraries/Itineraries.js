@@ -8,6 +8,15 @@ class Itineraries extends React.Component {
         tripItem: []
     }
     componentDidMount = async () => {
+        await this.fetchandMunge();
+    }
+
+    handleDelete = async (id) => {
+        await deleteTrip(id);
+        await this.fetchandMunge();
+    }
+    
+    fetchandMunge = async() =>{
         const tripData = await getChoices();
         let arr = [];
 
@@ -18,19 +27,6 @@ class Itineraries extends React.Component {
         this.setState({ tripItem: arr})
     }
 
-    handleDelete = async (id) => {
-        await deleteTrip(id);
-
-        const tripData = await getChoices();
-        let arr = [];
-
-        for(let i = 0; i < tripData.body.length / 5; i++) {
-            arr.push(tripData.body.slice(i * 5, i * 5 + 5));
-        }
-
-        this.setState({ tripItem: arr})
-        }
-    
     render() {
         return (
             <div className="i-category-container">
